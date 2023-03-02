@@ -68,7 +68,7 @@
             </accessor>
           </technique_common>
         </source>
-        <source id="meshId0-tex0" name="meshId0-tex0">
+        <source id="meshId0-tex0" name="meshId0-tex0">+
           <float_array id="meshId0-tex0-array" count="8"> 1 1 0 1 1 0 0 0 </float_array>
           <technique_common>
             <accessor count="4" offset="0" source="#meshId0-tex0-array" stride="2">
