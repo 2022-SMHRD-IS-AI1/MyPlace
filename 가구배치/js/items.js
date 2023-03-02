@@ -20,6 +20,12 @@ $(document).ready(function() {
       "model" : "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/165/whitewindow.js",
       "type" : "3"
     }, 
+   {
+      "name" : "Floor",
+      "image" : "models/thumbnails/thumbnail_DefaultMaterial_albedo",
+      "model" : "models/dae/model.dae",
+      "type" : "1"
+    }, 
    /*     
    {
       "name" : "",
