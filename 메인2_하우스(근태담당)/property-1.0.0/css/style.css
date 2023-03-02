@@ -9192,6 +9192,8 @@ textarea.form-control-lg {
   position: relative; }
 
 .logo {
+  margin-top: 6px;
+  height: auto;
   font-size: 24px;
   color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500; }
@@ -9215,7 +9217,7 @@ textarea.form-control-lg {
       display: inline-block; }
       .site-nav .site-navigation .site-menu > li > a {
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 30px 15px;
         display: inline-block;
         text-decoration: none !important;
         color: rgba(255, 255, 255, 0.5); }
@@ -9520,6 +9522,7 @@ textarea.form-control-lg {
 
 /* Burger */
 .burger {
+  top: 15px;
   width: 28px;
   height: 32px;
   cursor: pointer;
@@ -9654,11 +9657,11 @@ textarea {
 
 .menu-bg-wrap {
   background-color: #005555;
-  padding: 20px 30px;
+  padding: 1px 30px;
   position: relative;
   float: left;
   width: 100%;
-  border-radius: 7px;
+  border-radius: 30px;
   -webkit-box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.1);
   box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.1); }
 
@@ -9698,7 +9701,7 @@ textarea {
     font-size: 14px;
     margin-bottom: 30px; }
   .hero .narrow-w {
-    max-width: 600px;
+    max-width: fit-content;
     margin: 0 auto; }
   .hero .form-search .form-control {
     padding-top: 18px;

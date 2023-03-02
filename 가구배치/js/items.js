@@ -20,19 +20,6 @@ $(document).ready(function() {
       "model" : "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/165/whitewindow.js",
       "type" : "3"
     }, 
-    {
-      "name" : "Red Chair",
-      "image" : "models/thumbnails/thumbnail_tn-orange.png",
-      "model" : "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/723/ik-ekero-orange_baked.js",
-      "type" : "1"
-    }, 
-    {
-      "name" : "Bed",
-      "image" : "models/thumbnails/thumbnail_nordli-bed-frame__0159270_PE315708_S4.png",
-      "model" : "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/39/ik_nordli_full.js",
-      "type" : "1"
-    }, 
-
    /*     
    {
       "name" : "",
