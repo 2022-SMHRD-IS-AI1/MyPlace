@@ -2,6 +2,12 @@ from flask import Flask, session, escape, render_template, redirect, request, ur
 import cx_Oracle
 
 app = Flask(__name__)
+
+@app.route('/')
+def go():
+    error=None
+    return render_template('Login.html', error = error)
+
 app.secret_key = "ABCDEFG"
 cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\777\Oracle\instantclient_21_9")
 
@@ -40,6 +46,7 @@ def login():
             error = 'invalid input data detected !'
     return render_template('index.html', error = error)
 
+@app.route('/Login.html', methods=['GET', 'POST'])
 def regist():
     error = None
     if request.method == 'POST':
@@ -63,7 +70,7 @@ def regist():
     cursor.close()
     conn.close()
  
-    return render_template('Login.html', error=error) 
+    return render_template('Login.html', error=error)
  
 @app.route('/index.html', methods=['GET', 'POST'])
 def index():
@@ -76,9 +83,7 @@ def index():
 # 로그아웃
 # @app.route('/out')
 # def end():
-
 #     session.pop('username', None)
-
 #     return 'end'
 
 
