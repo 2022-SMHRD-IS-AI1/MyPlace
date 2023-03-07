@@ -6,6 +6,7 @@ import db
 import os
 
 
+
 app = Flask(__name__, template_folder='templates')
 CORS(app)
 app.secret_key = 'my_secret_key'
