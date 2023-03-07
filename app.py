@@ -1,8 +1,8 @@
 from flask import Flask, session, escape, render_template, redirect, request, url_for
-import cx_Oracle
 import db
 
 app = Flask(__name__, template_folder='templates')
+app.secret_key = 'my_secret_key'
 
 @app.route('/')
 def go():
@@ -16,14 +16,14 @@ def login():
         pw = request.form['login_pw']
         print(id, pw)
         
-        for row in db.login_check(id,pw):
+        result = db.login_check(id,pw)
+        for row in result:
             data = row[0]
-
         if data:
             session['user_id'] = id
             return redirect(url_for('index'))
         else:
-            return redirect(url_for('Login'))
+            return redirect(url_for('go'))
     return render_template('index.html', error = error)
 
 @app.route('/regist', methods=['GET', 'POST'])
@@ -34,13 +34,13 @@ def regist():
         pw = request.form['join_pw']
         email = request.form['join_mail']
 
-        data = db.join(id,pw,email)
-        if not data:
-            return "Regist Failed"
+        result = db.join(id,pw,email)
+        if result:
+            return redirect(url_for('go'))
         else:
-            return redirect(url_for('login'))
+            return redirect(url_for('go'))
     return render_template('Login.html', error=error)
- 
+
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     error = None
