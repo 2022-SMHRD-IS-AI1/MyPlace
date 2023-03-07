@@ -1,5 +1,5 @@
 from flask import Flask, session, escape, render_template, redirect, request, url_for
-from flask_cors import CORS 
+from flask_cors import CORS
 from datetime import datetime
 import uuid
 import db
@@ -83,6 +83,22 @@ def upload():
 @app.route('/properties')
 def properties():
     return render_template('properties.html')
+
+@app.route('/PayApi')
+def PayApi():
+    return render_template('PayApi.html')
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 # @app.route('/analyze', methods=['GET','POST'])
 # def analyze():
