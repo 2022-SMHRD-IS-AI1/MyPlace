@@ -10,7 +10,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Untree.co" />
-    <link rel="shortcut icon" href="favicon.png" />
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}"/>
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
@@ -22,12 +23,11 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css" />
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
-
-    <link rel="stylesheet" href="css/tiny-slider.css" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tiny-slider.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 
     <title>
       My Place
@@ -298,11 +298,11 @@
       </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
   </body>
 </html>
