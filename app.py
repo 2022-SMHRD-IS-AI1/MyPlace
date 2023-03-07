@@ -1,8 +1,13 @@
 from flask import Flask, session, escape, render_template, redirect, request, url_for
+from flask_cors import CORS 
+from datetime import datetime
+import uuid
 import db
 import os
 
+
 app = Flask(__name__, template_folder='templates')
+CORS(app)
 app.secret_key = 'my_secret_key'
 
 @app.route('/')
@@ -52,34 +57,28 @@ def index():
 def to_upload():
     return render_template('upload.html')
 
+
 @app.route('/upload', methods=['POST'])
 def upload():
-    file = request.files['image']
-    # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키입니다.
+    if request.method == 'POST':
+        file = request.files['image']
+    # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키
     
-    # 업로드된 파일의 저장 경로와 파일 이름을 지정합니다.
-    file_path = '/path/to/save/directory/' + file.filename
-    print(file.filename)
-    print(file_path)
-    if not os.path.exists(file_path):
-        os.makedirs(file_path)
-    # 업로드된 파일의 URL을 생성합니다.
-    url = url_for('static', filename=file.filename)
-    print(url)
+    # 업로드된 파일의 저장 경로와 파일 이름을 지정
+        now = datetime.now()
+        folder_name = now.strftime('%Y-%m-%d')
+        folder_path = os.path.join(app.root_path, 'static', folder_name)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
+        file_path = os.path.join(folder_path, file_name)
     
-    # 지정된 경로와 파일 이름으로 파일을 저장합니다.
-    file.save(file_path)
+    # 지정된 경로와 파일 이름으로 파일을 저장
+        file.save(file_path)
     
-
-   # 이미지 파일을 포함하는 HTML 파일을 렌더링합니다.
-    return render_template('image.html', url=url)
-
-
-# 로그아웃
-# @app.route('/out')
-# def end():
-#     session.pop('username', None)
-#     return 'end'
+    # 업로드된 파일의 URL을 생성
+        url = url_for('static', filename=os.path.join(folder_name, file_name))
+        return render_template('image.html', url=url)
 
 if __name__ == '__main__':
-    app.run(host = '127.0.0.1', port='5500')
+    app.run(host='127.0.0.1', port='5500')
