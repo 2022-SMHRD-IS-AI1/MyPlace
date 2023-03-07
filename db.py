@@ -3,7 +3,7 @@ import cx_Oracle
 def login_check(id, pw):
     try:
         if not cx_Oracle.init_oracle_client:
-            cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\777\Oracle\instantclient_21_9")
+            cx_Oracle.init_oracle_client(lib_dir=r"C:\instantclient_21_9")
         
         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
         cursor = conn.cursor()
