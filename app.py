@@ -76,10 +76,10 @@ def upload():
 
 
 # 로그아웃
-# @app.route('/out')
-# def end():
-#     session.pop('username', None)
-#     return 'end'
+@app.route('/out')
+def end():
+    session.pop('user_id', None)
+    return render_template('Login.html')
 
 if __name__ == '__main__':
     app.run(host = '127.0.0.1', port='5500')
