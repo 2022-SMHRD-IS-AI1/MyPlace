@@ -101,6 +101,10 @@ def about():
 def contact():
     return render_template('contact.html')
 
+# @app.route('/index')
+# def index():
+#     return render_template('index.html')
+
 # @app.route('/analyze', methods=['GET','POST'])
 # def analyze():
 #     url = "https://apis.openapi.sk.com/urbanbase/v1/space/analyzer"
