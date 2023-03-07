@@ -6,12 +6,13 @@ app.secret_key = "ABCDEFG"
 
 @app.route('/')
 def go():
-    return render_template('Login.html')
+    error=None
+    return render_template('Login.html', error = error)
 
 @app.route('/Login.html', methods=['GET', 'POST'])
 def login():
     if not cx_Oracle.init_oracle_client:
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\777\Oracle\instantclient_21_9")
+        cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\smhrd\Oracle\instantclient_21_9")
 
     #연결에 필요한 기본 정보 (유저, 비밀번호, 데이터베이스 서버 주소)
     conn = cx_Oracle.connect('kgt1234','123456a','project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
@@ -62,6 +63,7 @@ def regist():
     if request.method == 'POST':
         id = request.form['join_id']
         pw = request.form['join_pw']
+        
  
         conn = cx_Oracle.connect()
         cursor = conn.cursor()
