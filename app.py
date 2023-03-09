@@ -116,6 +116,10 @@ def contact():
 def single():
     return render_template('property-single.html')
 
+@app.route('/imageapi')
+def api():
+    return render_template('imageapi.html')
+
 
 # 로그아웃
 @app.route('/out', methods=['GET'])
