@@ -101,9 +101,10 @@ def about():
 def contact():
     return render_template('contact.html')
 
-# @app.route('/index')
-# def index():
-#     return render_template('index.html')
+@app.route('/property-single')
+def single():
+    return render_template('property-single.html')
+
 
 # @app.route('/analyze', methods=['GET','POST'])
 # def analyze():
