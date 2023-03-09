@@ -41,12 +41,10 @@
                             <a href="#" class="social-button" id="google-connect"> <span>Google Login</span></a>
                             <a href="#" class="social-button" id="facebook-connect"> <span>Facebook Login</span></a>
                             <a href="#" class="social-button" id="twitter-connect"> <span>Twitter Login</span></a>
-                            <a href="javascript:loginWithKakao()" class="social-button" id="kakao-connect"> <span>kakao Login</span></a>
+                            <a href="kakao" class="social-button" id="kakao-connect"> <span>kakao Login</span></a>
                         </div>
 
                 </form>
-
-                <div class="hr"></div>
                 <div class="foot-lnk">
                     <a href="#forgot">암호를 잊으셨습니까?</a>
                 </div>
@@ -82,38 +80,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function loginWithKakao() {
-          Kakao.Auth.authorize({
-            redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-          });
-        }
-      
-        // 아래는 데모를 위한 UI 코드입니다.
-        displayToken()
-        function displayToken() {
-          var token = getCookie('authorize-access-token');
-      
-          if(token) {
-            Kakao.Auth.setAccessToken(token);
-            Kakao.Auth.getStatusInfo()
-              .then(function(res) {
-                if (res.status === 'connected') {
-                  document.getElementById('token-result').innerText
-                    = 'login success, token: ' + Kakao.Auth.getAccessToken();
-                }
-              })
-              .catch(function(err) {
-                Kakao.Auth.setAccessToken(null);
-              });
-          }
-        }
-      
-        function getCookie(name) {
-          var parts = document.cookie.split(name + '=');
-          if (parts.length === 2) { return parts[1].split(';')[0]; }
-        }
-      </script>
 </body>
 
 </html>
