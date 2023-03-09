@@ -112,6 +112,10 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/property-single')
+def single():
+    return render_template('property-single.html')
+
 
 # 로그아웃
 @app.route('/out', methods=['GET'])
