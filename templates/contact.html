@@ -194,6 +194,7 @@
                   <input
                     type="submit"
                     value="문의하기"
+                    onclick="user_ask()"
                     class="btn btn-primary"
                   />
                 </div>
@@ -325,5 +326,11 @@
     <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <script>
+      function user_ask(){
+        alert("문의가 등록되었습니다.");
+      }
+
+    </script>
   </body>
 </html>
