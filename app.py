@@ -1,5 +1,6 @@
-from flask import Flask, session, escape, render_template, redirect, request, url_for
+from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort
 from flask_cors import CORS
+import requests
 from datetime import datetime
 import uuid
 import db
@@ -54,7 +55,7 @@ def index():
     id = session['user_id']
     return render_template('index.html', error=error, id=id)
 
-@app.route('/to_upload')
+@app.route('/to_upload', methods=['GET', 'POST'])
 def to_upload():
     return render_template('upload.html')
 
@@ -71,58 +72,49 @@ def upload():
         folder_path = os.path.join(app.root_path, 'static', folder_name)
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
+        print(folder_path)
         file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
         file_path = os.path.join(folder_path, file_name)
+        print(file_path)
     
     # 지정된 경로와 파일 이름으로 파일을 저장
         file.save(file_path)
 
     # 업로드된 파일의 URL을 생성
         url = url_for('static', filename=os.path.join(folder_name, file_name))
+        print(url)
+        url = url.replace('\\', '/')
         return render_template('image.html', url=url)
-
-@app.route('/properties')
+    else:
+        return redirect(url_for('to_upload'))
+    
+@app.route('/image')
+def image():
+    return render_template('image.html')
+    
+@app.route('/properties', methods=['GET', 'POST'])
 def properties():
     return render_template('properties.html')
 
-@app.route('/PayApi')
+@app.route('/PayApi', methods=['GET', 'POST'])
 def PayApi():
     return render_template('PayApi.html')
 
-@app.route('/services')
+@app.route('/services', methods=['GET', 'POST'])
 def services():
     return render_template('services.html')
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about():
     return render_template('about.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     return render_template('contact.html')
 
-# @app.route('/index')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/analyze', methods=['GET','POST'])
-# def analyze():
-#     url = "https://apis.openapi.sk.com/urbanbase/v1/space/analyzer"
-
-#     payload = "{\"image_path\":\"https://www.ikea.com/images/2-e4e271bd007a75af466351b6828af61c.jpg\"}"
-#     headers = {
-#         "accept": "application/json",
-#         "Content-Type": "json",
-#         "appKey": "XMGz6G5jzF5nybARW4cmY7fck4vpDiqg5u44kvRH"
-#     }
-#     response = request.post(url, data=payload, headers=headers)
-#     print(response.text)
-    
-#     return redirect()
-
 
 # 로그아웃
-@app.route('/out')
+@app.route('/out', methods=['GET'])
 def end():
     session.pop('user_id', None)
     return render_template('Login.html')
