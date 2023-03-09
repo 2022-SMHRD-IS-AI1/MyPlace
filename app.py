@@ -106,22 +106,6 @@ def single():
     return render_template('property-single.html')
 
 
-# @app.route('/analyze', methods=['GET','POST'])
-# def analyze():
-#     url = "https://apis.openapi.sk.com/urbanbase/v1/space/analyzer"
-
-#     payload = "{\"image_path\":\"https://www.ikea.com/images/2-e4e271bd007a75af466351b6828af61c.jpg\"}"
-#     headers = {
-#         "accept": "application/json",
-#         "Content-Type": "json",
-#         "appKey": "XMGz6G5jzF5nybARW4cmY7fck4vpDiqg5u44kvRH"
-#     }
-#     response = request.post(url, data=payload, headers=headers)
-#     print(response.text)
-    
-#     return redirect()
-
-
 # 로그아웃
 @app.route('/out')
 def end():
