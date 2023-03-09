@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort
+from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort, jsonify
 from flask_cors import CORS
 import requests
 from datetime import datetime
@@ -60,37 +60,64 @@ def to_upload():
     return render_template('upload.html')
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
-        file = request.files['image']
-    # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키
-    
-    # 업로드된 파일의 저장 경로와 파일 이름을 지정
-        now = datetime.now()
-        folder_name = now.strftime('%Y-%m-%d')
-        folder_path = os.path.join(app.root_path, 'static', folder_name)
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
-        print(folder_path)
-        file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
-        file_path = os.path.join(folder_path, file_name)
-        print(file_path)
-    
-    # 지정된 경로와 파일 이름으로 파일을 저장
-        file.save(file_path)
-
-    # 업로드된 파일의 URL을 생성
-        url = url_for('static', filename=os.path.join(folder_name, file_name))
-        print(url)
-        url = url.replace('\\', '/')
-        return render_template('image.html', url=url)
+        # 업로드된 파일을 처리하는 로직을 작성합니다.
+        file = request.files['myFileUpload']
+        # 파일을 저장하고 경로를 다른 페이지로 전달합니다.
+        file_path = save_file(file)
+        return redirect('/result?file_path=' + file_path)
     else:
-        return redirect(url_for('to_upload'))
+        return render_template('upload.html')
+
+@app.route('/result')
+def result():
+    file_path = request.args.get('file_path')
+    # 결과 페이지를 렌더링합니다.
+    return render_template('result.html', file_path=file_path)
+
+def save_file(file):
+    # 파일을 저장하고 저장된 파일의 경로를 반환합니다.
+    file_path = 'C:/Users/777/Documents/GitHub/MyPlace/static/images/user_img' + file.filename
+    file.save(file_path)
+    return file_path
+
+# @app.route('/image', methods=['GET', 'POST'])
+# def image():
+#     return render_template('image.html')
+
+# @app.route('/image/<data>', methods=['GET', 'POST'])
+# def image(data):
+#     return render_template('image.html', data=data)
+
+    # if request.method == 'POST':
+    #     file = request.files['image']
+    # # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키
     
-@app.route('/image')
-def image():
-    return render_template('image.html')
+    # # 업로드된 파일의 저장 경로와 파일 이름을 지정
+    #     now = datetime.now()
+    #     folder_name = now.strftime('%Y-%m-%d')
+    #     folder_path = os.path.join(app.root_path, 'static', folder_name)
+    #     if not os.path.exists(folder_path):
+    #         os.makedirs(folder_path)
+    #     print(folder_path)
+    #     file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
+    #     file_path = os.path.join(folder_path, file_name)
+    #     print(file_path)
+    
+    # # 지정된 경로와 파일 이름으로 파일을 저장
+    #     file.save(file_path)
+
+    # # 업로드된 파일의 URL을 생성
+    #     url = url_for('static', filename=os.path.join(folder_name, file_name), _external=True)
+    #     response = {
+    #         'status': 'success',
+    #         'url': url
+    #     }
+    #     return jsonify(response)
+    
+    
     
 @app.route('/properties', methods=['GET', 'POST'])
 def properties():
