@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort
+from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort, jsonify
 from flask_cors import CORS
 import requests
 from datetime import datetime
@@ -62,35 +62,49 @@ def to_upload():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    if request.method == 'POST':
-        file = request.files['image']
-    # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키
+    file = request.files['image']
+    now = datetime.now()
+    folder_name = now.strftime('%Y-%m-%d')
+    folder_path = os.path.join(app.root_path, 'static', folder_name)
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
+    file_path = os.path.join(folder_path, file_name)
+    file.save(file_path)
+    url = '/' + os.path.join('static', folder_name, file_name).replace('\\', '/')
+    # url = url_for('static', filename=os.path.join(folder_name, file_name))
+    return jsonify({"status": "success", "url": url})
     
-    # 업로드된 파일의 저장 경로와 파일 이름을 지정
-        now = datetime.now()
-        folder_name = now.strftime('%Y-%m-%d')
-        folder_path = os.path.join(app.root_path, 'static', folder_name)
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
-        print(folder_path)
-        file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
-        file_path = os.path.join(folder_path, file_name)
-        print(file_path)
+    # if request.method == 'POST':
+    #     file = request.files['image']
+    # # 'image'는 HTML 코드에서 formData.append() 메서드에서 사용한 키
     
-    # 지정된 경로와 파일 이름으로 파일을 저장
-        file.save(file_path)
+    # # 업로드된 파일의 저장 경로와 파일 이름을 지정
+    #     now = datetime.now()
+    #     folder_name = now.strftime('%Y-%m-%d')
+    #     folder_path = os.path.join(app.root_path, 'static', folder_name)
+    #     if not os.path.exists(folder_path):
+    #         os.makedirs(folder_path)
+    #     print(folder_path)
+    #     file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
+    #     file_path = os.path.join(folder_path, file_name)
+    #     print(file_path)
+    
+    # # 지정된 경로와 파일 이름으로 파일을 저장
+    #     file.save(file_path)
 
-    # 업로드된 파일의 URL을 생성
-        url = url_for('static', filename=os.path.join(folder_name, file_name))
-        print(url)
-        url = url.replace('\\', '/')
-        return render_template('image.html', url=url)
-    else:
-        return redirect(url_for('to_upload'))
+    # # 업로드된 파일의 URL을 생성
+    #     url = url_for('static', filename=os.path.join(folder_name, file_name), _external=True)
+    #     response = {
+    #         'status': 'success',
+    #         'url': url
+    #     }
+    #     return jsonify(response)
     
-@app.route('/image')
-def image():
-    return render_template('image.html')
+    
+# @app.route('/image')
+# def image():
+#     return render_template('image.html')
     
 @app.route('/properties', methods=['GET', 'POST'])
 def properties():

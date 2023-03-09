@@ -5,27 +5,57 @@
 <title>Insert title here</title>
 </head>
 <body>
+  <h1>Upload Image</h1>
+  <input type="file" id="myFileUpload">
+  <button id="uploadButton">Upload Image</button>
 
 <script>
-    function upload() {
-    var file = document.getElementById("myFileUpload").files[0];
-    var formData = new FormData();
-    formData.append("image", file);
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "upload", true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        // 업로드 성공시 처리할 코드 작성
-        console.log("Upload successful!");
-      } else {
-        // 업로드 실패시 처리할 코드 작성
-        console.error("Upload failed.");
-      }
-    };
-    xhr.send(formData);
-  }
+    const uploadButton = document.getElementById("uploadButton");
+    const fileUpload = document.getElementById("myFileUpload");
+
+    uploadButton.addEventListener("click", () => {
+      const file = fileUpload.files[0];
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "/upload");
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          if (response.status === 'success') {
+            window.open(response.url, '_blank');
+          } else {
+            console.error("Upload failed.");
+          }
+        } else {
+          console.error("Upload failed.");
+        }
+      };
+      xhr.send(formData);
+    });
+
+    // function upload() {
+    // var file = document.getElementById("myFileUpload").files[0];
+    // var formData = new FormData();
+    // formData.append("image", file);
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("POST", "upload", true);
+    // xhr.onload = function() {
+    //   if (xhr.status === 200) {
+    //     var response = JSON.parse(xhr.responseText);
+    //     if(response.status === 'success'){
+    //       window.open(response.url, '_blank');
+    //     }else{
+    //       console.error("Upload failed.");
+    //     }
+    //   }else{
+    //       console.error("Upload failed.");
+    //     }
+           
+            
 </script>
-    <input type="file" id="myFileUpload" name="image" enctype="multipart/form-data">
-    <button onclick="upload()">Upload Image</button>
+    <!-- <input type="file" id="myFileUpload"><button onclick="upload()">Upload Image</button> -->
+    
 </body>
 </html>
