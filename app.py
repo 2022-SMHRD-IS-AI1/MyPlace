@@ -147,9 +147,13 @@ def single():
 def api():
     return render_template('imageapi.html')
 
-@app.route('/kakao')
+@app.route('/Easter')
 def kakao():
-    return render_template('kakao.html')
+    return render_template('Easter.html')
+
+@app.route('/imageapi')
+def imageapi():
+    return render_template('imageapi.html')
 
 
 # 로그아웃

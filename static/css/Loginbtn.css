@@ -172,12 +172,12 @@ body {
     transition: all .3s ease;
 }
 
-#kakao-connect {
+#kakao-login-btn {
     background: rgb(255, 255, 255) url('https://cdn.imweb.me/thumbnail/20210215/7c04c49bf896a.png') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
     border: 1px solid rgb(60, 90, 154);
 }
 
-#kakao-connect:hover {
+#kakao-login-btn:hover {
     border-color: rgb(60, 90, 154);
     background: rgb(250, 225, 0) url('https://cdn.imweb.me/thumbnail/20210215/7c04c49bf896a.png') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
     -webkit-transition: all .8s ease-out;
@@ -187,7 +187,7 @@ body {
     transition: all .3s ease-out;
 }
 
-#kakao-connect span {
+#kakao-login-btn span {
     box-sizing: border-box;
     color: rgb(60, 90, 154);
     cursor: pointer;
@@ -202,7 +202,7 @@ body {
     transition: all .3s ease;
 }
 
-#kakao-connect:hover span {
+#kakao-login-btn:hover span {
     color: #FFF;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
