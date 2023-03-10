@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="{{ url_for('get_image', filename=image_filename) }}" alt="Image">
+    <img src="{{file_path}}" alt="Image">
     <h1>
         {% for k, v in data.items() %}
         {{ k }} : {{ v }}

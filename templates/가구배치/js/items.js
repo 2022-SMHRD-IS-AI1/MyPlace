@@ -32,7 +32,18 @@ $(document).ready(function() {
       "model" : "https://blueprint-dev.s3.amazonaws.com/uploads/item_model/model/39/ik_nordli_full.js",
       "type" : "1"
     }, 
-
+    {
+      "name" : "chair",
+      // "image" : "models/thumbnails/thumbnail_Modern_bedjson.jpg",
+      "model" : "models/js/chair.js",
+      "type" : "1"
+    },
+    {
+      "name" : "closet",
+      // "image" : "models/thumbnails/thumbnail_Modern_bedjson.jpg",
+      "model" : "models/js/closet.js",
+      "type" : "1"
+    }, 
    /*     
    {
       "name" : "",
