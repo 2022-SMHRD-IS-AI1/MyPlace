@@ -6,9 +6,9 @@
 </head>
 <body>
   <h1>Upload Image</h1>
-  <form action="upload" method="post">
-    <input type="file" id="myFileUpload">
-    <input type="submit" value="결과보기" id="uploadButton">
+  <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="myFileUpload">
+    <input type="submit" value="결과보기">
   </form>
 
 <script>
