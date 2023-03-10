@@ -115,7 +115,7 @@ def analyze():
     file_path = request.args.get('file_path')
     url = "https://apis.openapi.sk.com/urbanbase/v1/space/analyzer"
     # payload = "{\"image_path\":\"https://www.ikea.com/images/2-e4e271bd007a75af466351b6828af61c.jpg\"}"
-    payload = "{\"image_path\":\""+"http://127.0.0.1:5500/analyze?file_path="+file_path+"\"}\""
+    payload = "{\"image_path\":\""+file_path+"\"}\""
     print('Payload :',payload)
     headers = {
         "accept": "application/json",
