@@ -68,8 +68,8 @@ def regist():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     error = None
-   #id = session['user_id']
-    return render_template('index.html', error=error) #id=id)
+    id = session['user_id']
+    return render_template('index.html', error=error, id=id)
 
 @app.route('/to_upload', methods=['GET', 'POST'])
 def to_upload():
@@ -115,7 +115,7 @@ def analyze():
     file_path = request.args.get('file_path')
     url = "https://apis.openapi.sk.com/urbanbase/v1/space/analyzer"
     # payload = "{\"image_path\":\"https://www.ikea.com/images/2-e4e271bd007a75af466351b6828af61c.jpg\"}"
-    payload = "{\"image_path\":\""+file_path+"\"}\""
+    payload = "{\"image_path\":\""+file_path+"\"}"
     print('Payload :',payload)
     headers = {
         "accept": "application/json",
