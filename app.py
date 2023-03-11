@@ -15,18 +15,18 @@ app.config['UPLOAD_FOLDER'] = 'C:/Users/777/Documents/GitHub/MyPlace/static' # �
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.secret_key = 'my_secret_key'
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+# def allowed_file(filename):
+#     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-def save_file(file):
-    # 파일을 저장하고 저장된 파일의 경로를 반환합니다.
-    file_name = file.filename
-    file_ext = os.path.splitext(file_name)[1]
-    unique_name = str(int(time.time())) + file_ext
-    file_path = os.path.join(os.getcwd(), 'uploads', unique_name)
-    print('save_file_path :', file_path)
-    file.save(file_path)
-    return file_path
+# def save_file(file):
+#     # 파일을 저장하고 저장된 파일의 경로를 반환합니다.
+#     file_name = file.filename
+#     file_ext = os.path.splitext(file_name)[1]
+#     unique_name = str(int(time.time())) + file_ext
+#     file_path = os.path.join(os.getcwd(), 'uploads', unique_name)
+#     print('save_file_path :', file_path)
+#     file.save(file_path)
+#     return file_path
 
 @app.route('/')
 def go():
@@ -76,31 +76,31 @@ def to_upload():
     return render_template('upload.html')
 
 
-@app.route('/upload', methods=['GET','POST'])
-def upload():
-    if request.method == 'POST':
-        file = request.files['myFileUpload']
-        # 업로드된 파일의 저장 경로와 파일 이름을 지정
-        now = datetime.now()
-        folder_name = now.strftime('%Y-%m-%d')
-        folder_path = os.path.join(app.root_path, 'static', folder_name)
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
-        print(folder_path)
-        file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
-        file_path = os.path.join(folder_path, file_name)
-        print('file_path', file_path)
+# @app.route('/upload', methods=['GET','POST'])
+# def upload():
+#     if request.method == 'POST':
+#         file = request.files['myFileUpload']
+#         # 업로드된 파일의 저장 경로와 파일 이름을 지정
+#         now = datetime.now()
+#         folder_name = now.strftime('%Y-%m-%d')
+#         folder_path = os.path.join(app.root_path, 'static', folder_name)
+#         if not os.path.exists(folder_path):
+#             os.makedirs(folder_path)
+#         print(folder_path)
+#         file_name = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
+#         file_path = os.path.join(folder_path, file_name)
+#         print('file_path', file_path)
 
-        # 지정된 경로와 파일 이름으로 파일을 저장
-        file.save(file_path)
+#         # 지정된 경로와 파일 이름으로 파일을 저장
+#         file.save(file_path)
 
-        file_path.replace('\\','/')
-        print(file_path.find('static'))
-        file_path=file_path[38:]
+#         file_path.replace('\\','/')
+#         print(file_path.find('static'))
+#         file_path=file_path[38:]
         
-        return redirect(url_for('analyze', file_path=file_path))
-    else:
-        return render_template('upload.html')
+#         return redirect(url_for('analyze', file_path=file_path))
+#     else:
+#         return render_template('upload.html')
 
 
 # @app.route('/image')

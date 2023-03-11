@@ -17,6 +17,7 @@
     // http://35.78.206.254:8080/MyPlace_Image/FileUpload
     function request(){
       var inputFile = $('#myFileInput')[0].files[0];
+      print('inputFile :',inputFile)
       var formData = new FormData();
       formData.append('file', inputFile);
       $.ajax({
@@ -28,7 +29,7 @@
         success : function(res){
           // 성공하면?
           console.log("요청 성공");
-          window.location.href=""
+          window.location.href="http://127.0.0.1:5500/analyze?file_path="+response.url;
 
           // 페이지 이동
           // window.location.href="http://www.naver.com/";
