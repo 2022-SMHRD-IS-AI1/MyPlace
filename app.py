@@ -68,8 +68,8 @@ def regist():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     error = None
-    id = session['user_id']
-    return render_template('index.html', error=error, id=id)
+   #id = session['user_id']
+    return render_template('index.html', error=error) #id=id)
 
 @app.route('/to_upload', methods=['GET', 'POST'])
 def to_upload():
