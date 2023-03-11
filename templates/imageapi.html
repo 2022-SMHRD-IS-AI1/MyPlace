@@ -27,8 +27,34 @@
     <div id="main">
       <!-- Header -->
       <header id="header">
-        <h1>인테리어 업로드</h1>
-        <a href="{{url_for('to_upload')}}">이미지 업로드</a>
+        <div class="col-lg-9 text-center">
+          <form
+          action="#"
+          class="narrow-w form-search d-flex align-items-stretch mb-3"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          >
+            <input
+              type="button"
+              class="btn btn-primary"
+              onclick="onclick=document.all.myFileInput.click()"
+              value="업로드"
+            />
+            <input
+              type="file"
+              id="myFileInput"
+              style="display: none"
+            />
+            <br>
+            <br>
+            <input
+              type="button"
+              onclick="request()"
+              value="결과보기"
+              class="btn btn-primary"
+            />
+          </form>
+        </div>
       </header>
 
       <!-- Thumbnail -->
@@ -137,9 +163,11 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uptest.js') }}"></script>
   </body>
 </html>

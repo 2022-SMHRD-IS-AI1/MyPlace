@@ -7,6 +7,9 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+* {cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -59,6 +62,48 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
+
+.hero .form-search .btn {
+    background-color: #03b82a;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff; 
+}
+
+.col-lg-9 {
+	-webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 60%; 
+}
+
+.text-center {
+	text-align: center !important; 
+}
+
+.btn {
+	text-decoration: none !important;
+	border-radius: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-width: 1px;
+	border-color: transparent;
+	border: none !important;
+	top: 0;
+	position: relative;
+	-webkit-transition: .3s all ease;
+	-o-transition: .3s all ease;
+	transition: .3s all ease; 
+}
+
+.btn.btn-primary {
+	background: #03b82a;
+	color: #fff; 
+}
+
+
 
 input::-moz-focus-inner {
 	border: 0;
@@ -271,12 +316,13 @@ input, select, textarea {
 		text-align: right;
 	}
 
-/* Button */
+/* Button
 
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
 	button,
+	.btn,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -287,13 +333,13 @@ input, select, textarea {
 		-ms-transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out;
 		transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out;
 		background-color: transparent;
-		border-radius: 4px;
+		border-radius: 100px;
 		border: solid 1px #ccc;
 		color: #555;
 		cursor: pointer;
 		display: inline-block;
 		line-height: 1;
-		padding: 0.75em 1.5em;
+		padding: 1em 1em;
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
@@ -303,6 +349,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
+		.btn,
 		.button:hover {
 			border-color: #00D3B7;
 			color: #00D3B7;
@@ -320,6 +367,7 @@ input, select, textarea {
 		input[type="reset"].icon,
 		input[type="button"].icon,
 		button.icon,
+		.btn,
 		.button.icon {
 			padding-left: 1.35em;
 		}
@@ -336,6 +384,7 @@ input, select, textarea {
 		input[type="reset"].fit,
 		input[type="button"].fit,
 		button.fit,
+		.btn,
 		.button.fit {
 			width: 100%;
 		}
@@ -344,6 +393,7 @@ input, select, textarea {
 		input[type="reset"].small,
 		input[type="button"].small,
 		button.small,
+		.btn,
 		.button.small {
 			font-size: 0.8em;
 		}
@@ -352,6 +402,7 @@ input, select, textarea {
 		input[type="reset"].large,
 		input[type="button"].large,
 		button.large,
+		.btn,
 		.button.large {
 			font-size: 1.35em;
 		}
@@ -363,11 +414,12 @@ input, select, textarea {
 		input[type="button"]:disabled,
 		button.disabled,
 		button:disabled,
+		.btn,
 		.button.disabled,
 		.button:disabled {
 			pointer-events: none;
 			opacity: 0.25;
-		}
+		} */
 
 /* Form */
 
@@ -929,12 +981,12 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 3em 2.25em 1.75em 2.25em ;
+		padding: 5em 3em 5em 7em ;
 	}
 
 		#header h1 {
-			font-size: 2.25em;
-			font-weight: 700;
+			font-size: 2em;
+			font-weight: 600;
 		}
 
 /* Footer */

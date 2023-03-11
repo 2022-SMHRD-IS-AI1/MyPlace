@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tiny-slider.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mouse.css') }}" />
+    
     <title>
       My Place
     </title>
@@ -112,7 +113,10 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <a href="imageapi" class="btn btn-primary">이미지 업로드</a>
+              <div class="btn btn-primary" onclick="onclick=document.all.myFileInput.click()">업로드</div>
+              <input type="file" id="myFileInput" style="display:none" value="API">
+              <input type="button" onclick="request()" value="결과보기" class="btn btn-primary">
+              <a href="imageapi" class="btn btn-primary">화면이동</a>
              
             </form>
           </div>
@@ -952,11 +956,13 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
     <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
     <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uptest.js') }}"></script>
   </body>
 </html>
