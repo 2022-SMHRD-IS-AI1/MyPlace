@@ -30,6 +30,10 @@ app.secret_key = 'my_secret_key'
 
 @app.route('/')
 def go():
+    return render_template('Introduction.html')
+
+@app.route('/Login')
+def IntrLogin():
     return render_template('Login.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -47,7 +51,7 @@ def login():
             session['user_id'] = id
             return redirect(url_for('index'))
         else:
-            return redirect(url_for('go'))
+            return redirect(url_for('IntrLogin'))
     return render_template('index.html', error = error)
 
 @app.route('/regist', methods=['GET', 'POST'])
@@ -201,6 +205,12 @@ def imageapi():
 @app.route('/가구배치')
 def aaaa():
     return render_template('가구배치.html')
+
+@app.route('/Introduction')
+def Introduction():
+    return render_template('Introduction.html')
+
+
 
 # 로그아웃
 @app.route('/out', methods=['GET'])

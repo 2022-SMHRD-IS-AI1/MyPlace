@@ -1,4 +1,4 @@
-const ServerURL = "http://35.78.206.254:8080/MyPlace_Image/";
+const ServerURL = "http://18.182.31.43:8080/MyPlace_Image/";
 // API Server
 // API : 데이터를 반환해주는 서버 or 프로그램
 // 비동기 통신( ajax );
