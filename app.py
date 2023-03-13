@@ -198,6 +198,9 @@ def kakao():
 def imageapi():
     return render_template('imageapi.html')
 
+@app.route('/가구배치')
+def aaaa():
+    return render_template('가구배치.html')
 
 # 로그아웃
 @app.route('/out', methods=['GET'])
