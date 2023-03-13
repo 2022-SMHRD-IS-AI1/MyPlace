@@ -38,17 +38,17 @@
       <div class="container">
         <div class="menu-bg-wrap">
           <div class="site-navigation">
-            <a href="#" class="logo m-0 float-start"><img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Image" class="logo main" /></a>
+            <a href="index" class="logo m-0 float-start"><img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Image" class="logo main" /></a>
 
             <ul
               class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
             >
               <li class="active"><a href="index">홈</a></li>
               <li class="has-children">
-                <a href="#">커뮤니티</a>
+                <a href="properties">커뮤니티</a>
                 <ul class="dropdown">
-                  <li><a href="#">구독결제</a></li>
-                  <li><a href="#">테스트용</a></li>
+                  <li><a href="about">베스트 My Place </a></li>
+                  <li><a href="#">예비용 </a></li>
                   <li class="has-children">
                     <a href="#">예비용</a>
                     <ul class="dropdown">
@@ -59,12 +59,12 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="#">My Place 소개</a></li>
-              <li><a href="#">베스트 My Place </a></li>
-              <li><a href="#">고객문의</a></li>
-              <li><a href="#">로그아웃</a></li>
+              <li><a href="services">My Place 소개</a></li>
+              <li><a href="PayApi">구독 결제</a></li>
+              <li><a href="out">로그아웃</a></li>
+              <li><a href="#">예비용</a></li>
             </ul>
-
+            
             <a
               href="#"
               class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
