@@ -24,7 +24,7 @@ def login_check(id, pw):
 
 def join(id,pw,email):
     if not cx_Oracle.init_oracle_client:
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\777\Oracle\instantclient_21_9")
+        cx_Oracle.init_oracle_client(lib_dir=r"C:\instantclient_21_9")
     result = 0
     #연결에 필요한 기본 정보 (유저, 비밀번호, 데이터베이스 서버 주소)
     conn = cx_Oracle.connect('kgt1234','123456a','project-db-stu.ddns.net:1524/xe', encoding="UTF-8")

@@ -163,7 +163,10 @@ def analyze():
     }
     print(data)
     
-    return render_template('api.html', data=data, file_path=file_path)
+    return render_template('yolo.html', data=data, file_path=file_path)
+# YOLO 붙여서 yolo로 넘어가게 만들어야함.
+# yolo로 넘어가면 분석하고 openCV로 캡쳐해서
+# 정보들과 함께 imageapi.html로 넘어가게 해야함.
 
     
 @app.route('/properties', methods=['GET', 'POST'])
