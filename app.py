@@ -163,8 +163,8 @@ def analyze():
     }
     print(data)
     
-    # return render_template('imageapi.html', data=data, file_path=file_path)
-    return redirect(url_for('yolo'), data=data, file_path=file_path)
+    return render_template('imageapi.html', data=data, file_path=file_path)
+    # return redirect(url_for('yolo'), data=data, file_path=file_path)
 
 # @app.route('/yolo', method=['GET','POST'])
 # def yolo():
