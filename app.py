@@ -209,10 +209,6 @@ def contact():
 def single():
     return render_template('property-single.html')
 
-@app.route('/imageapi')
-def api():
-    return render_template('imageapi.html')
-
 @app.route('/Easter')
 def kakao():
     return render_template('Easter.html')
@@ -220,10 +216,6 @@ def kakao():
 @app.route('/imageapi')
 def imageapi():
     return render_template('imageapi.html')
-
-@app.route('/가구배치')
-def aaaa():
-    return render_template('가구배치.html')
 
 @app.route('/Introduction')
 def Introduction():
