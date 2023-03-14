@@ -74,11 +74,11 @@ mark {
 	-webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: 60%; 
+    width: 100%; 
 }
 
 .text-center {
-	text-align: center !important; 
+	text-align: center; 
 }
 
 .btn {
@@ -181,7 +181,7 @@ input, select, textarea {
 
 	body {
 		background-color: #fff;
-		color: #aaa;
+		color: #000000;
 	}
 
 	body, input, select, textarea {
@@ -189,7 +189,7 @@ input, select, textarea {
 		font-weight: 400;
 		line-height: 1.65;
 		font-size: 1em;
-		color: #aaa;
+		color: #000000;
 	}
 
 	a {
@@ -981,7 +981,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 5em 3em 5em 7em ;
+		padding: 3em 1em 5em 1em ;
 	}
 
 		#header h1 {
@@ -1154,6 +1154,7 @@ input, select, textarea {
 		-ms-transition: opacity 0.75s ease, width 0.75s ease;
 		transition: opacity 0.75s ease, width 0.75s ease;
 		position: absolute;
+		background-color: white;
 		top: 0;
 		width: calc(100% - 22.5em);
 		height: 100%;
@@ -1235,7 +1236,6 @@ input, select, textarea {
 			-webkit-transition: opacity 0.5s ease-in-out;
 			-ms-transition: opacity 0.5s ease-in-out;
 			transition: opacity 0.5s ease-in-out;
-			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -1244,19 +1244,7 @@ input, select, textarea {
 			z-index: 1;
 		}
 
-			#viewer .slide .caption {
-				background-image: -moz-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: -webkit-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: -ms-linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				background-image: linear-gradient(bottom, rgba(16,16,16,0.75), rgba(16,16,16,0.25) 80%, rgba(16,16,16,0));
-				padding: 2em 2em 0.75em 2em ;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				color: rgba(255, 255, 255, 0.5);
-				z-index: 1;
-			}
+			
 
 				#viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {
 					color: #fff;
@@ -1267,13 +1255,12 @@ input, select, textarea {
 				-webkit-transition: opacity 0.5s ease-in-out;
 				-ms-transition: opacity 0.5s ease-in-out;
 				transition: opacity 0.5s ease-in-out;
-				position: absolute;
+				position: fixed;
 				top: 0;
 				left: 0;
-				width: 100%;
+				width: 80%;
 				height: 100%;
 				background-repeat: no-repeat;
-				background-size: cover;
 				opacity: 0;
 			}
 

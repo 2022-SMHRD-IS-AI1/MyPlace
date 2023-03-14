@@ -29,126 +29,120 @@
       <header id="header">
         <div class="col-lg-9 text-center">
           <form
-          action="#"
-          class="narrow-w form-search d-flex align-items-stretch mb-3"
-          data-aos="fade-up"
-          data-aos-delay="200"
+            action="#"
+            class="narrow-w form-search d-flex align-items-stretch mb-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
-          <p> {% for k, v in data.items() %}
-            {{ k }} : {{ v }}
-            <br>
-            {% endfor %}</p>
+            <p>
+              {% for k, v in data.items() %} {{ k }} : {{ v }}
+              <br />
+              {% endfor %}
+            </p>
             <input
               type="button"
               onclick="가구배치"
-              value="결과보기"
+              value="3D 배치"
               class="btn btn-primary"
             />
           </form>
         </div>
       </header>
-    
+
       <!-- Thumbnail -->
-    <div id="menu1">
-      <section id="thumbnails">
-        <article>
-          <a
-            class="thumbnail"
-            href="{{file_path}}"
-            data-position="left center"
-            alt="Image"
-            ><img src="static/images/thumbs/api1.jpg"></a>
-          <h2>인테리어 분위기</h2>
-          <p> {% for k, v in data.items() %}
-            {{ k }} : {{ v }}
-            <br>
-            {% endfor %}</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api2.jpg"
-            ><img src="static/images/thumbs/api2.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 모던 분위기 88%</p>
-        </article>
-        <article>
-          <a
-            class="thumbnail"
-            href="static/images/fulls/api3.jpg"
-            data-position="top center"
-            ><img src="static/images/thumbs/api3.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 북유럽 분위기 68%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api4.jpg"
-            ><img src="static/images/thumbs/api4.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 로맨틱 분위기 58%</p>
-        </article>
-        <article>
-          <a
-            class="thumbnail"
-            href="static/images/fulls/api5.jpg"
-            data-position="top center"
-            ><img src="static/images/thumbs/api5.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 미니멀 분위기 81%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api6.jpg"
-            ><img src="static/images/thumbs/api6.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 레트로 분위기 73%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api7.jpg"
-            ><img src="static/images/thumbs/api7.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 따뜻한 분위기 98%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api8.jpg"
-            ><img src="static/images/thumbs/api8.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 차가운 분위기 81%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api9.jpg"
-            ><img src="static/images/thumbs/api9.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 자연적 분위기 61%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api10.jpg"
-            ><img src="static/images/thumbs/api10.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 로맨틱 분위기 74%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api11.jpg"
-            ><img src="static/images/thumbs/api11.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 모던 분위기 54%</p>
-        </article>
-        <article>
-          <a class="thumbnail" href="static/images/fulls/api12.jpg"
-            ><img src="static/images/thumbs/api12.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 미니멀 분위기 64%</p>
-        </article>
-      </section>
-    </div>
+      <div id="menu1">
+        <section id="thumbnails" >
+          <article>
+            <a
+              class="thumbnail"
+              href="{{file_path}}"
+              alt="Image"
+              ><img src="static/images/thumbs/api1.jpg"
+            /></a>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api2.jpg"
+              ><img src="static/images/thumbs/api2.jpg" alt=""
+            /></a>
+          </article>
+          <article>
+            <a
+              class="thumbnail"
+              href="static/images/fulls/api3.jpg"
+              data-position="top center"
+              ><img src="static/images/thumbs/api3.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 북유럽 분위기 68%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api4.jpg"
+              ><img src="static/images/thumbs/api4.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 로맨틱 분위기 58%</p>
+          </article>
+          <article>
+            <a
+              class="thumbnail"
+              href="static/images/fulls/api5.jpg"
+              data-position="top center"
+              ><img src="static/images/thumbs/api5.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 미니멀 분위기 81%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api6.jpg"
+              ><img src="static/images/thumbs/api6.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 레트로 분위기 73%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api7.jpg"
+              ><img src="static/images/thumbs/api7.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 따뜻한 분위기 98%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api8.jpg"
+              ><img src="static/images/thumbs/api8.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 차가운 분위기 81%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api9.jpg"
+              ><img src="static/images/thumbs/api9.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 자연적 분위기 61%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api10.jpg"
+              ><img src="static/images/thumbs/api10.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 로맨틱 분위기 74%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api11.jpg"
+              ><img src="static/images/thumbs/api11.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 모던 분위기 54%</p>
+          </article>
+          <article>
+            <a class="thumbnail" href="static/images/fulls/api12.jpg"
+              ><img src="static/images/thumbs/api12.jpg" alt=""
+            /></a>
+            <h2>인테리어 이미지</h2>
+            <p>인테리어 분위기 : 미니멀 분위기 64%</p>
+          </article>
+        </section>
+      </div>
       <!-- Footer -->
       <footer id="footer">
         <ul class="copyright">
