@@ -163,10 +163,26 @@ def analyze():
     }
     print(data)
     
-    return render_template('imageapi.html', data=data, file_path=file_path)
-# YOLO 붙여서 yolo로 넘어가게 만들어야함.
-# yolo로 넘어가면 분석하고 openCV로 캡쳐해서
-# 정보들과 함께 imageapi.html로 넘어가게 해야함.
+    # return render_template('imageapi.html', data=data, file_path=file_path)
+    return redirect(url_for('yolo'), data=data, file_path=file_path)
+
+@app.route('/yolo', method=['GET','POST'])
+def yolo():
+    file_path = request.args.get('file_path')
+    data = request.args.get('data')
+    
+    
+    img = img
+    
+    return render_template('imageapi.html', data=data, img = img)
+    
+# 1. app.py 에서 함수 만들고
+# 2. best_ckpt.pt(저희꺼 모델) 불러오기
+# 3. 모델 실행
+# 4. infer.py 안에 있는 save dir 복붙
+# 5. render template
+# (imageapi.html, 값 다시 보내주기 
+# data = data(api돌린거), result(yolo돌린 결과값))
 
     
 @app.route('/properties', methods=['GET', 'POST'])
