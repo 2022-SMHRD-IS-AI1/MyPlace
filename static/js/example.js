@@ -518,7 +518,7 @@ $(document).ready(function() {
     floorplannerElement: 'floorplanner-canvas',
     threeElement: '#viewer',
     threeCanvasElement: 'three-canvas',
-    textureDir: "models/textures/",
+    textureDir: "static/models/textures/",
     widget: false
   }
   var blueprint3d = new Blueprint3d(opts);

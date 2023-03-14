@@ -166,15 +166,15 @@ def analyze():
     # return render_template('imageapi.html', data=data, file_path=file_path)
     return redirect(url_for('yolo'), data=data, file_path=file_path)
 
-@app.route('/yolo', method=['GET','POST'])
-def yolo():
-    file_path = request.args.get('file_path')
-    data = request.args.get('data')
+# @app.route('/yolo', method=['GET','POST'])
+# def yolo():
+#     file_path = request.args.get('file_path')
+#     data = request.args.get('data')
     
     
-    img = img
+#     img = img
     
-    return render_template('imageapi.html', data=data, img = img)
+#     return render_template('imageapi.html', data=data, img = img)
     
 # 1. app.py 에서 함수 만들고
 # 2. best_ckpt.pt(저희꺼 모델) 불러오기
@@ -228,6 +228,10 @@ def aaaa():
 @app.route('/Introduction')
 def Introduction():
     return render_template('Introduction.html')
+
+@app.route('/move_furniture')
+def move_furniture():
+    return render_template('move_furniture.html')
 
 
 

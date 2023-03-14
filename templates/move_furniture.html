@@ -3,20 +3,10 @@
   <head>
     <title>WebGL3D - Furnish</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/example.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap2.css') }}"  rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/example.css') }}" rel="stylesheet">
 
-	<script src="js/three.js"></script>
-
-    <!-- Make sure you've built blueprint3d.js -->
-    <!-- See README.md for details -->
-    <script src="js/blueprint3d.js"></script>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    
-    <script src="js/items.js"></script>
-    <script src="js/example.js"></script>
+	
   </head>
 
   <body>
@@ -109,8 +99,8 @@
               <div class="panel-body" style="color: #333333">
 
                 <div class="col-sm-6" style="padding: 3px">
-                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/light_fine_wood.jpg" texture-stretch="false" texture-scale="300">
-                    <img alt="Thumbnail light fine wood" src="rooms/thumbnails/thumbnail_light_fine_wood.jpg" />
+                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="static/rooms/textures/light_fine_wood.jpg" texture-stretch="false" texture-scale="300">
+                    <img alt="Thumbnail light fine wood" src="static\rooms\thumbnails\thumbnail_light_fine_wood.jpg" />
                   </a>
                 </div>
               </div>
@@ -123,18 +113,18 @@
               <div class="panel-heading">Adjust Wall</div>
               <div class="panel-body" style="color: #333333">
                 <div class="col-sm-6" style="padding: 3px">
-                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/marbletiles.jpg" texture-stretch="false" texture-scale="300">
-                    <img alt="Thumbnail marbletiles" src="rooms/thumbnails/thumbnail_marbletiles.jpg" />
+                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="static/rooms/textures/marbletiles.jpg" texture-stretch="false" texture-scale="300">
+                    <img alt="Thumbnail marbletiles" src="static/rooms/thumbnails/thumbnail_marbletiles.jpg" />
                   </a>
                 </div>
                 <div class="col-sm-6" style="padding: 3px">
-                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/wallmap_yellow.png" texture-stretch="true" texture-scale="">
-                    <img alt="Thumbnail wallmap yellow" src="rooms/thumbnails/thumbnail_wallmap_yellow.png" />
+                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="static/rooms/textures/wallmap_yellow.png" texture-stretch="true" texture-scale="">
+                    <img alt="Thumbnail wallmap yellow" src="static/rooms/thumbnails/thumbnail_wallmap_yellow.png" />
                   </a>
                 </div>
                 <div class="col-sm-6" style="padding: 3px">
-                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="rooms/textures/light_brick.jpg" texture-stretch="false" texture-scale="100">
-                    <img alt="Thumbnail light brick" src="rooms/thumbnails/thumbnail_light_brick.jpg" />
+                  <a href="#" class="thumbnail texture-select-thumbnail" texture-url="static/rooms/textures/light_brick.jpg" texture-stretch="false" texture-scale="100">
+                    <img alt="Thumbnail light brick" src="static/rooms/thumbnails/thumbnail_light_brick.jpg" />
                   </a>
                 </div>
               </div>
@@ -234,6 +224,16 @@
         <!-- End Right Column -->
       </div>
     </div>
+    <script src="{{ url_for('static', filename='js/three.js') }}"></script>
 
+    <!-- Make sure you've built blueprint3d.js -->
+    <!-- See README.md for details -->
+    <script src="{{ url_for('static', filename='js/blueprint3d.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='js/items.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/example.js') }}"></script>
   </body>
 </html>
