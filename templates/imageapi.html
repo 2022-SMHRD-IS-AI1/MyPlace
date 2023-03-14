@@ -34,6 +34,10 @@
           data-aos="fade-up"
           data-aos-delay="200"
           >
+          <p> {% for k, v in data.items() %}
+            {{ k }} : {{ v }}
+            <br>
+            {% endfor %}</p>
             <input
               type="button"
               onclick="가구배치"
@@ -43,19 +47,22 @@
           </form>
         </div>
       </header>
-
+    
       <!-- Thumbnail -->
-    <div>
+    <div id="menu1">
       <section id="thumbnails">
         <article>
           <a
             class="thumbnail"
-            href="static/images/fulls/api1.jpg"
+            href="{{file_path}}"
             data-position="left center"
-            ><img src="static/images/thumbs/api1.jpg" alt=""
-          /></a>
-          <h2>인테리어 이미지</h2>
-          <p>인테리어 분위기 : 로맨틱 분위기 78%</p>
+            alt="Image"
+            ><img src="static/images/thumbs/api1.jpg"></a>
+          <h2>인테리어 분위기</h2>
+          <p> {% for k, v in data.items() %}
+            {{ k }} : {{ v }}
+            <br>
+            {% endfor %}</p>
         </article>
         <article>
           <a class="thumbnail" href="static/images/fulls/api2.jpg"

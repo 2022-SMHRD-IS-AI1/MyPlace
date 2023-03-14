@@ -72,8 +72,8 @@ def regist():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     error = None
-    id = session['user_id']
-    return render_template('index.html', error=error, id=id)
+    #id = session['user_id']
+    return render_template('index.html', error=error)#, id=id
 
 @app.route('/to_upload', methods=['GET', 'POST'])
 def to_upload():
@@ -163,7 +163,7 @@ def analyze():
     }
     print(data)
     
-    return render_template('yolo.html', data=data, file_path=file_path)
+    return render_template('imageapi.html', data=data, file_path=file_path)
 # YOLO 붙여서 yolo로 넘어가게 만들어야함.
 # yolo로 넘어가면 분석하고 openCV로 캡쳐해서
 # 정보들과 함께 imageapi.html로 넘어가게 해야함.
