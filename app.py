@@ -6,7 +6,7 @@ import uuid
 import db
 import os
 import time
-import infer
+# import infer
 
 
 
@@ -165,11 +165,11 @@ def analyze():
     # return redirect(url_for('yolo'), data=data, file_path=file_path)
 
 
-@app.route('/yolo', method=['GET','POST'])
-def yolo():
-    file_path = request.args.get('file_path')
-    data = request.args.get('data')
-    label = infer.run(source= )
+# @app.route('/yolo', method=['GET','POST'])
+# def yolo():
+#     file_path = request.args.get('file_path')
+#     data = request.args.get('data')
+#     label = infer.run(source= )
     
     
     
@@ -234,4 +234,4 @@ def end():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port='5500')
+    app.run(host='127.0.0.1', port='5501')
