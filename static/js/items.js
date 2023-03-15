@@ -56,6 +56,12 @@ $(document).ready(function() {
       "model" : "static/models/js/Accent_chest.js",
       "type" : "1"
     },
+    {
+      "name" : "Moder_bed",
+      "image" : "static/models/thumbnails/thumbnail_Modern_bed.png",
+      "model" : "static/models/js/Modern_bed.js",
+      "type" : "1"
+    },
    /*     
    {
       "name" : "",
