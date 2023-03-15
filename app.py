@@ -159,8 +159,10 @@ def analyze():
     }
     print(data)
     
-    # return render_template('imageapi.html', data=data, file_path=file_path)
-    return redirect(url_for('imageapi.html'), data=data, file_path=file_path)
+
+    return render_template('imageapi.html', data=data, file_path=file_path)
+    # return redirect(url_for('yolo'), data=data, file_path=file_path)
+
 
 # @app.route('/yolo', method=['GET','POST'])
 # def yolo():
@@ -204,7 +206,6 @@ def contact():
 @app.route('/property-single')
 def single():
     return render_template('property-single.html')
-
 
 @app.route('/Easter')
 def kakao():

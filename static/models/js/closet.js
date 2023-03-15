@@ -46,7 +46,7 @@
 					"colorSpecular": [0.5, 0.416084885597229, 0.45826804637908936],
 					"depthTest": true,
 					"depthWrite": true,
-					"mapDiffuse" : "accent_cabinet_Mat_AO.png",
+					"mapDiffuse" : "static\models\textures\accent_cabinet_Mat_AO.png",
 					"mapDiffuseWrap" : ["repeat", "repeat"],
 					"shading": "Lambert",
 					"specularCoef": 50,
