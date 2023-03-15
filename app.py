@@ -75,10 +75,6 @@ def index():
     #id = session['user_id']
     return render_template('index.html', error=error)#, id=id
 
-@app.route('/to_upload', methods=['GET', 'POST'])
-def to_upload():
-    return render_template('upload.html')
-
 
 # @app.route('/upload', methods=['GET','POST'])
 # def upload():
@@ -164,7 +160,7 @@ def analyze():
     print(data)
     
     # return render_template('imageapi.html', data=data, file_path=file_path)
-    return redirect(url_for('yolo'), data=data, file_path=file_path)
+    return redirect(url_for('imageapi.html'), data=data, file_path=file_path)
 
 # @app.route('/yolo', method=['GET','POST'])
 # def yolo():
@@ -209,9 +205,6 @@ def contact():
 def single():
     return render_template('property-single.html')
 
-@app.route('/imageapi')
-def api():
-    return render_template('imageapi.html')
 
 @app.route('/Easter')
 def kakao():
@@ -220,10 +213,6 @@ def kakao():
 @app.route('/imageapi')
 def imageapi():
     return render_template('imageapi.html')
-
-@app.route('/가구배치')
-def aaaa():
-    return render_template('가구배치.html')
 
 @app.route('/Introduction')
 def Introduction():
