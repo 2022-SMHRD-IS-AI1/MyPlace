@@ -7,7 +7,7 @@ def login_check(id, pw):
         
         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM MY_USER WHERE USER_ID = (:1) AND USER_PW = (:2)", [id, pw])
+        cursor.execute("SELECT * FROM USERS WHERE USER_ID = (:1) AND USER_PW = (:2)", [id, pw])
 
         data = cursor.fetchall()
     except cx_Oracle.Error as error:
@@ -30,7 +30,7 @@ def join(id,pw,email):
     conn = cx_Oracle.connect('kgt1234','123456a','project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
     try:
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO MY_USER VALUES ('%s', '%s', '%s')" % (id, pw, email))
+        cursor.execute("INSERT INTO USERS VALUES ('%s', '%s', '%s')" % (id, pw, email))
         conn.commit()
         result = 1
         
