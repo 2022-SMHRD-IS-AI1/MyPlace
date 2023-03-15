@@ -11472,7 +11472,7 @@ var Room = function(floorplan, corners) {
   this.customTexture = false;
 
   var defaultTexture = {
-    url: "rooms/textures/hardwood.png",
+    url: "static/rooms/textures/hardwood.png",
     scale: 400
   }
 
@@ -11738,7 +11738,7 @@ var Wall = function(start, end) {
   var action_callbacks = JQUERY.Callbacks();
 
   var defaultTexture =  {
-    url: "rooms/textures/wallmap.png",
+    url: "static/rooms/textures/wallmap.png",
     stretch: true,
     scale: 0
   }
