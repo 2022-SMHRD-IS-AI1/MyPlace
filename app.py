@@ -169,11 +169,7 @@ def analyze():
 # def yolo():
 #     file_path = request.args.get('file_path')
 #     data = request.args.get('data')
-<<<<<<< Updated upstream
-#     label = infer.run(source= )
-=======
 #     label = infer.run(source=file_path)
->>>>>>> Stashed changes
     
     
     
