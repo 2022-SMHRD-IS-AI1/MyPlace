@@ -6,7 +6,9 @@ import uuid
 import db
 import os
 import time
-# import infer
+import infer
+import numpy as np
+from urllib.request import urlretrieve
 
 
 
@@ -136,7 +138,7 @@ def analyze():
     # print(result.find('},{'))
     cut=result.find('},{')
     result=result[:cut+1]
-    print('result : ',result)
+    # print('result : ',result)
     
     ### result
     label_start = result.find('":"')
@@ -151,29 +153,24 @@ def analyze():
     description = description.replace('"}','')
     # print(label, probability, description)
     
-    
-    ### dictionary
-    data = {
-        '스타일 결과' : label,
-        '정확도' : probability
-        # '' : description
-    }
-    print(data)
+    #이미지 로컬 다운받기
+    urlretrieve(file_path, './room.jpg')
+    # urban model result
+    urban_result=data = np.array([label,probability])
+    print(urban_result)
     
 
-    return render_template('imageapi.html', data=data, file_path=file_path)
-    # return redirect(url_for('yolo'), data=data, file_path=file_path)
+    # return render_template('imageapi.html', data=data, file_path=file_path)
+    return redirect(url_for(f'yolo',data=urban_result))
 
 
-# @app.route('/yolo', method=['GET','POST'])
-# def yolo():
-#     file_path = request.args.get('file_path')
-#     data = request.args.get('data')
-#     label = infer.run(source=file_path)
-    
-    
-    
-#     return render_template('imageapi.html', data=data, label = label)
+@app.route('/yolo/<data>', methods=['GET','POST'])
+def yolo(data):
+    img_path = './room.jpg'
+    label = infer.run(source=img_path)
+    # print(img_path, data)
+    # return img_path+ '\n' +data
+    return render_template('imageapi.html', img_path, data)
     
 # 1. app.py 에서 함수 만들고
 # 2. best_ckpt.pt(저희꺼 모델) 불러오기

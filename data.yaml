@@ -1,0 +1,11 @@
+names:
+- '-'
+- bed
+- chair
+- closet
+- desk
+- table
+nc: 6
+test: newplace-6/images/test
+train: newplace-6/images/train
+val: newplace-6/images/valid

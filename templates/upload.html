@@ -19,7 +19,8 @@
     // 비동기 통신( ajax );
     // http://35.78.206.254:8080/MyPlace_Image/FileUpload
     function request(){
-      var inputFile = $('#myFileInput')[0].files[0];
+      var inputFile = $('#myFileI
+      nput')[0].files[0];
       console.log('inputFile :',inputFile)
       var formData = new FormData();
       formData.append("myFileInput", inputFile);
