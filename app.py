@@ -170,7 +170,8 @@ def yolo(data):
     label = infer.run(source=img_path)
     # print(img_path, data)
     # return img_path+ '\n' +data
-    return render_template('imageapi.html', img_path, data)
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", label)
+    return render_template('imageapi.html', img_path, data, label)
     
 # 1. app.py 에서 함수 만들고
 # 2. best_ckpt.pt(저희꺼 모델) 불러오기
