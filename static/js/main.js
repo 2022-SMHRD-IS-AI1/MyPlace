@@ -380,23 +380,23 @@ var main = (function($) { var _ = {
 	initViewer: function() {
 
 		// Bind thumbnail click event.
-			_.$thumbnails
-				.on('click', '.thumbnail', function(event) {
+			// _.$thumbnails
+			// 	.on('click', '.thumbnail', function(event) {
 
-					var $this = $(this);
+			// 		var $this = $(this);
 
-					// Stop other events.
-						event.preventDefault();
-						event.stopPropagation();
+			// 		// Stop other events.
+			// 			event.preventDefault();
+			// 			event.stopPropagation();
 
-					// Locked? Blur.
-						if (_.locked)
-							$this.blur();
+			// 		// Locked? Blur.
+			// 			if (_.locked)
+			// 				$this.blur();
 
-					// Switch to this thumbnail's slide.
-						_.switchTo($this.data('index'));
+			// 		// Switch to this thumbnail's slide.
+			// 			_.switchTo($this.data('index'));
 
-				});
+			// 	});
 
 		// Create slides from thumbnails.
 			_.$thumbnails.children()
@@ -404,6 +404,7 @@ var main = (function($) { var _ = {
 
 					var	$this = $(this),
 						$thumbnail = $this.children('.thumbnail'),
+						$mainImgSrc = $this.children('#main-img-src'),
 						s;
 
 					// Slide object.
@@ -412,9 +413,11 @@ var main = (function($) { var _ = {
 							$slide: null,
 							$slideImage: null,
 							$slideCaption: null,
-							url: $thumbnail.attr('href'),
+							url: $mainImgSrc.attr('href'),
 							loaded: false
 						};
+
+					console.log(s);
 
 					// Parent.
 						$this.attr('tabIndex', '-1');
@@ -422,6 +425,7 @@ var main = (function($) { var _ = {
 					// Slide.
 
 						// Create elements.
+						
 	 						s.$slide = $('<div class="slide"><div class="caption"></div><div class="image"></div></div>');
 
 	 					// Image.
