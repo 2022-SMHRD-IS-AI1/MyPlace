@@ -11,64 +11,20 @@
 * {cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;}
 
 
-.navbar{
-    height: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
-
-}
-
-.hero-header{
-    height: 200px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    }
-      
-.navbar img{
-    vertical-align: top;
-    border: blanchedalmond 5px solid;
-}
-
-.navbar #menu{
-    float: right;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar #menu li{
-    float: left;
-    margin-left: 80px;
-    line-height: 80px;
-}
-
-.navbar #menu li a{
-    color: #4fec07;
-    font-size: 20px;
-    text-decoration: none;
-}
 .product-list{
-    width: 1000px;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
-}
-.products h3{
-    font-size: 24px;
-    color: #545454;
-    margin-top:60px;
-    margin-bottom: 60px;
-    text-align: center;
 }
 
 .product{
     display: block;
-    width: 225px;
+    width: 500px;
     text-align: center;
     text-decoration:none;
     color: black;
     float:left;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 10px;
     margin-bottom: 30px;
 }
@@ -81,18 +37,6 @@
 .clearfix{
     clear: both;
 }
-.footer{
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.footer a{
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration:none;
-}
-
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -971,7 +915,7 @@ input, select, textarea {
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
 		top: 0;
-		width: 22.5em;
+		width: 25em;
 		height: 100%;
 		background: #fff;
 		outline: 0;
@@ -1065,7 +1009,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 3em 1em 5em 1em ;
+		padding: 3em 1em 3em 1em ;
 	}
 
 		#header h1 {
@@ -1342,7 +1286,7 @@ input, select, textarea {
 				position: fixed;
 				top: 0;
 				left: 0;
-				width: 80%;
+				width: 70%;
 				height: 100%;
 				background-repeat: no-repeat;
 				opacity: 0;
