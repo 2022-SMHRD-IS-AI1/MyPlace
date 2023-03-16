@@ -33,17 +33,35 @@ $(document).ready(function() {
       "type" : "1"
     }, 
     {
-      "name" : "chair",
-      // "image" : "models/thumbnails/thumbnail_Modern_bedjson.jpg",
-      "model" : "static/models/js/chair.js",
+      "name" : "Blue_chair",
+      "image" : "static/models/thumbnails/thumbnail_ik-ekero-orange_baked.png",
+      "model" : "static/models/js/Blue_chair.js",
+      "type" : "1"
+    }, 
+    {
+      "name" : "Wood_table",
+      "image" : "static/models/thumbnails/thumbnail_Wood_table.png",
+      "model" : "static/models/js/Wood_table.js",
       "type" : "1"
     },
     {
-      "name" : "closet",
-      // "image" : "models/thumbnails/thumbnail_Modern_bedjson.jpg",
-      "model" : "static/models/js/closet.js",
+      "name" : "Piano_chair",
+      "image" : "static/models/thumbnails/thumbnail_Piano_chair.png",
+      "model" : "static/models/js/Piano_chair.js",
       "type" : "1"
-    }, 
+    },
+    {
+      "name" : "Accent_chest",
+      "image" : "static/models/thumbnails/thumbnail_Accent_chest.png",
+      "model" : "static/models/js/Accent_chest.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Moder_bed",
+      "image" : "static/models/thumbnails/thumbnail_Modern_bed.png",
+      "model" : "static/models/js/Modern_bed.js",
+      "type" : "1"
+    },
    /*     
    {
       "name" : "",

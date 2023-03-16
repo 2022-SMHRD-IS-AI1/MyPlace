@@ -6,6 +6,7 @@ import uuid
 import db
 import os
 import time
+# import infer
 
 
 
@@ -153,9 +154,9 @@ def analyze():
     
     ### dictionary
     data = {
-        'label' : label,
-        'probability' : probability,
-        'description' : description
+        '스타일 결과' : label,
+        '정확도' : probability
+        # '' : description
     }
     print(data)
     
@@ -168,11 +169,11 @@ def analyze():
 # def yolo():
 #     file_path = request.args.get('file_path')
 #     data = request.args.get('data')
+#     label = infer.run(source=file_path)
     
     
-#     img = img
     
-#     return render_template('imageapi.html', data=data, img = img)
+#     return render_template('imageapi.html', data=data, label = label)
     
 # 1. app.py 에서 함수 만들고
 # 2. best_ckpt.pt(저희꺼 모델) 불러오기
