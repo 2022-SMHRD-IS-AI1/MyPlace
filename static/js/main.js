@@ -4,6 +4,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+
 var main = (function($) { var _ = {
 
 	/**
@@ -380,23 +382,23 @@ var main = (function($) { var _ = {
 	initViewer: function() {
 
 		// Bind thumbnail click event.
-			// _.$thumbnails
-			// 	.on('click', '.thumbnail', function(event) {
+			_.$thumbnails
+				.on('click', '.thumbnail', function(event) {
 
-			// 		var $this = $(this);
+					var $this = $(this);
 
-			// 		// Stop other events.
-			// 			event.preventDefault();
-			// 			event.stopPropagation();
+					// Stop other events.
+						event.preventDefault();
+						event.stopPropagation();
 
-			// 		// Locked? Blur.
-			// 			if (_.locked)
-			// 				$this.blur();
+					// Locked? Blur.
+						if (_.locked)
+							$this.blur();
 
-			// 		// Switch to this thumbnail's slide.
-			// 			_.switchTo($this.data('index'));
+					// Switch to this thumbnail's slide.
+						_.switchTo($this.data('index'));
 
-			// 	});
+				});
 
 		// Create slides from thumbnails.
 			_.$thumbnails.children()

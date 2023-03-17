@@ -1,185 +1,116 @@
 <!DOCTYPE html>
-<!--
-	Lens by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
-  <head>
+
+<head>
     <title>MyPlace</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/main.css') }}"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/noscript.css') }}"
-    /></noscript>
-  </head>
-  <body class="is-preload-0 is-preload-1 is-preload-2">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}" />
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+    </noscript>
+</head>
+
+<body class="is-preload-0 is-preload-1 is-preload-2">
     <!-- Main -->
     <div id="main">
-      <!-- Header -->
-      <header id="header">
-        <div class="col-lg-9 text-center">
-          <form
-            action="#"
-            class="narrow-w form-search d-flex align-items-stretch mb-3"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <p>
-              {% for k in datas[1] %} {{ k }}
-              <br />
-              {% endfor %}
-            </p>
-            <a href="move_furniture" class="btn btn-primary">3D 배치</a>
-          </form>
+        <!-- Header -->
+        <header id="header">
+            <div class="col-lg-9 text-center">
+                <form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <p>
+                        {% for k, v in data.items() %} {{ k }} : {{ v }}
+                        <br />
+                        {% endfor %}
+                    </p>
+                    <a href="move_furniture" title="Button push blue/green" class="button btnPush btnBlueGreen">3D 배치</a>
+                </form>
+            </div>
+        </header>
+
+        <!-- Thumbnail -->
+        <div id="menu1">
+            <section id="thumbnails">
+                <div><a id="main-img-src" href="{{file_path}}" style="display:none;" /></div>
+            </section>
+
+
+
+            <div class="back color-2">
+                <div class="row columns">
+                    <ul class="menu align-center expanded text-center SMN_effect-2">
+                        <li><a href="index">홈</a></li>
+                        <li><a href="#">침대</a></li>
+                        <li><a href="#">책상</a></li>
+                        <li><a href="#">서랍장</a></li>
+                        <li><a href="#">테이블</a></li>
+                        <li><a href="#">의자</a></li>
+                    </ul>
+                </div>
+            </div>
+<br>
+            <div class="hero-header"></div>
+            <div class="products">
+                <div class="product-list">
+                    <a href="#" class="product">
+                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225">
+                        <div class="product-name">
+                            침대
+                        </div>
+                        <div class="product-price">
+                            49,000
+                        </div>
+                    </a>
+
+
+                    <a href="#" class="product">
+                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
+                            height="225px">
+                        <div class="product-name">
+                            Sunglasses
+                        </div>
+                        <div class="product-price">
+                            49,000
+                        </div>
+                    </a>
+
+
+                    <a href="#" class="product">
+                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
+                            height="225px">
+                        <div class="product-name">
+                            Sunglasses
+                        </div>
+                        <div class="product-price">
+                            49,000
+                        </div>
+                    </a>
+
+
+                    <a href="#" class="product">
+                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
+                            height="225px">
+                        <div class="product-name">
+                            Sunglasses
+                        </div>
+                        <div class="product-price">
+                            49,000
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-      </header>
 
-      <!-- Thumbnail -->
-      <div id="menu1">
-        <section id="thumbnails">
-          <div><a id="main-img-src" href="{{datas[0]}}" style="display:none;"/></div>
-        </section>    
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/uptest.js') }}"></script>
+</body>
 
-
-        <div class="navbar">
-          <ul id="menu">
-              {% for v in datas[2] %}
-              <li><a href="#" class="btn btn-primary" ><b>{{ v }}</b></a></li>
-              {% endfor %}
-              <li><a href="#" class="btn btn-primary" ><b>침대</b></a></li>
-              <li><a href="#" class="btn btn-primary" ><b>의자</b></a></li>
-              <li><a href="#" class="btn btn-primary" ><b>책상</b></a></li>
-              <li><a href="#" class="btn btn-primary" ><b>테이블</b></a></li>
-              <li><a href="#" class="btn btn-primary" ><b>서랍장</b></a></li>
-          </ul>
-        </div>
-  
-      <div class="hero-header"></div>
-  
-      <div class="products">
-          <h3>Our New Products</h3>
-  
-          <div class="product-list">
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225">
-                  <div class="product-name">
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-  
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>
-              </a>
-              
-              <a href="#" class="product">
-                  <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
-                  <div class="product-name">
-                      Sunglasses
-                  </div>
-                  <div class="product-price">
-                      49,000
-                  </div>          
-              </a>
-              <div class="clearfix"></div>
-          </div>
-  
-
-
-        
-
-      </div>
-      <!-- Footer -->
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/uptest.js') }}"></script>
-  </body>
 </html>
