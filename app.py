@@ -156,7 +156,7 @@ def analyze():
     #이미지 로컬 다운받기
     urlretrieve(file_path, './room.jpg')
     # urban model result
-    urban_result=data = np.array([label,probability])
+    urban_result= np.array([label,probability])
     print(urban_result)
     
 
@@ -167,11 +167,11 @@ def analyze():
 @app.route('/yolo/<data>', methods=['GET','POST'])
 def yolo(data):
     img_path = './room.jpg'
-    label = infer.run(source=img_path)
+    labelList = infer.run(source=img_path)
     # print(img_path, data)
     # return img_path+ '\n' +data
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", label)
-    return render_template('imageapi.html', img_path, data, label)
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", labelList)
+    return render_template('imageapi.html', datas = (img_path, data, labelList))
     
 # 1. app.py 에서 함수 만들고
 # 2. best_ckpt.pt(저희꺼 모델) 불러오기
