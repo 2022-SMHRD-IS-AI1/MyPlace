@@ -172,6 +172,7 @@ def yolo(data):
     # print(labelList[0].find('0'))
     # print(len(labelList))
     for i in range(len(labelList)):
+        print(labelList[i][:labelList[i].find('0')-1])
         labelList[i]=labelList[i][:labelList[i].find('0')-1]
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", labelList)
     
@@ -185,7 +186,6 @@ def yolo(data):
     prob=f_prob+prob
     print(prob)
     
-    print('타입', type(labelList))
     print(labelList[0])
     for i in labelList:
         cnt=0
@@ -195,11 +195,12 @@ def yolo(data):
                 print(j)
         if cnt==2:
             print("i",i)
-            labelList.remove(j)
+            labelList.remove(i)
     
     itemList=[]
-            
+    
     for i in labelList:
+        print('가구 :',i)
         item=db.select(style,i)
         itemList.append(item)
         

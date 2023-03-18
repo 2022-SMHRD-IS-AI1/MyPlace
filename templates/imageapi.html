@@ -40,9 +40,9 @@
             <div class="back color-2">
                 <div class="row columns">
                     <ul class="menu align-center expanded text-center SMN_effect-2">
-                      <li><a href="index">HOME</a></li>
+                      <li><a class="menu-item" href="index">HOME</a></li>
                         {% for item in labelList %}
-                          <li><a href="#">{{item}}</a></li>
+                          <li><a class="menu-item" href="javascript:void(0);">{{item}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -51,51 +51,7 @@
             <div class="hero-header"></div>
             <div class="products">
                 <div class="product-list">
-                    <a href="#" class="product">
-                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225">
-                        <div class="product-name">
-                            침대
-                        </div>
-                        <div class="product-price">
-                            49,000
-                        </div>
-                    </a>
-
-
-                    <a href="#" class="product">
-                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
-                            height="225px">
-                        <div class="product-name">
-                            Sunglasses
-                        </div>
-                        <div class="product-price">
-                            49,000
-                        </div>
-                    </a>
-
-
-                    <a href="#" class="product">
-                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
-                            height="225px">
-                        <div class="product-name">
-                            Sunglasses
-                        </div>
-                        <div class="product-price">
-                            49,000
-                        </div>
-                    </a>
-
-
-                    <a href="#" class="product">
-                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225"
-                            height="225px">
-                        <div class="product-name">
-                            Sunglasses
-                        </div>
-                        <div class="product-price">
-                            49,000
-                        </div>
-                    </a>
+                   
                 </div>
             </div>
         </div>
@@ -103,6 +59,7 @@
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/furniture.js') }}"></script>
         <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>

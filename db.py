@@ -49,7 +49,7 @@ def select(style,label):
         
         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM FURNITURE WHERE FURNITURE_TYPE = (:1) AND FURNITURE_STYLE = (:2)", [label, style])
+        cursor.execute("SELECT FURNITURE_TYPE, FURNITURE_STYLE, FURNITURE_PRICE FROM FURNITURE WHERE FURNITURE_TYPE =:1 AND FURNITURE_STYLE =:2", [label, style])
         data = cursor.fetchall()
         print("@#$#!%!@#$!@#$@!%!@%#$",data)
     except cx_Oracle.Error as error:
