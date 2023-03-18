@@ -156,7 +156,7 @@ def analyze():
     #이미지 로컬 다운받기
     urlretrieve(file_path, './room.jpg')
     # urban model result
-    urban_result=[label,probability]
+    urban_result=label + ' ' + probability
     print(urban_result)
     
 
@@ -167,15 +167,40 @@ def analyze():
 @app.route('/yolo/<data>', methods=['GET','POST'])
 def yolo(data):
     # img_path = './room.jpg'
-    img_path = 'C:/Users/777/Documents/GitHub/MyPlace/room.jpg'
+    img_path = 'room.jpg'
     labelList = infer.run(source=img_path)
-    print(labelList[0].find('0'))
-    print(len(labelList))
+    # print(labelList[0].find('0'))
+    # print(len(labelList))
     for i in range(len(labelList)):
         labelList[i]=labelList[i][:labelList[i].find('0')-1]
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", labelList)
+    
+    label = data[:data.find('0')]
+    print(label)
+    
+    prob = data[data.find('0')+2:]
+    f_prob=prob[:2]
+    f_prob=f_prob+'.'
+    prob=prob[2:]
+    prob=f_prob+prob
+    print(prob)
+    
+    print('타입', type(labelList))
+    print(labelList[0])
+    for i in labelList:
+        cnt=0
+        for j in labelList:
+            if i == j:
+                cnt+=1
+                print(j)
+        if cnt==2:
+            print("i",i)
+            labelList.remove(j)
+    
+    
 
-    return render_template('imageapi.html', datas = (img_path, data, labelList))
+    return render_template('imageapi.html', label=label, prob=prob, labelList=labelList, img_path=img_path)
+
 # labelList 전처리
     
 # 1. app.py 에서 함수 만들고
