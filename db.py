@@ -42,14 +42,36 @@ def join(id,pw,email):
         
     return result
 
-def select(style,label):
+# def select(style,label):
+#     try:
+#         if not cx_Oracle.init_oracle_client:
+#             cx_Oracle.init_oracle_client(lib_dir=r"C:\instantclient_21_9")
+        
+#         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
+#         cursor = conn.cursor()
+#         cursor.execute("SELECT FURNITURE_TYPE, FURNITURE_STYLE, FURNITURE_PRICE FROM FURNITURE WHERE FURNITURE_TYPE =(:1) AND FURNITURE_STYLE =(:2)", [label, style])
+#         data = cursor.fetchall()
+#         print("@#$#!%!@#$!@#$@!%!@%#$",data)
+#     except cx_Oracle.Error as error:
+#         print('Oracle database error:', error)
+#         data = None
+#     except Exception as exception:
+#         print('Error occurred:', exception)
+#         data = None
+#     finally:
+#         cursor.close()
+#         conn.close()
+
+#     return data
+data = []
+def select(style, label):
     try:
         if not cx_Oracle.init_oracle_client:
             cx_Oracle.init_oracle_client(lib_dir=r"C:\instantclient_21_9")
         
         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
         cursor = conn.cursor()
-        cursor.execute("SELECT FURNITURE_TYPE, FURNITURE_STYLE, FURNITURE_PRICE FROM FURNITURE WHERE FURNITURE_TYPE =:1 AND FURNITURE_STYLE =:2", [label, style])
+        cursor.execute("SELECT * FROM FURNITURE WHERE FURNITURE_TYPE =(:1) AND FURNITURE_STYLE =(:2)", [label, style])
         data = cursor.fetchall()
         print("@#$#!%!@#$!@#$@!%!@%#$",data)
     except cx_Oracle.Error as error:
@@ -63,4 +85,3 @@ def select(style,label):
         conn.close()
 
     return data
-    
