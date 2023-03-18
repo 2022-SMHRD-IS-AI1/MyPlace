@@ -22,9 +22,7 @@
                 <form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                     data-aos-delay="200">
                     <p>
-                        {% for k, v in data.items() %} {{ k }} : {{ v }}
-                        <br />
-                        {% endfor %}
+                      {{datas[1]}}
                     </p>
                     <a href="move_furniture" title="Button push blue/green" class="button btnPush btnBlueGreen">3D 배치</a>
                 </form>
@@ -34,7 +32,7 @@
         <!-- Thumbnail -->
         <div id="menu1">
             <section id="thumbnails">
-                <div><a id="main-img-src" href="{{file_path}}" style="display:none;" /></div>
+                <div><a id="main-img-src" href="{{datas[0]}}" style="display:none;" /></div>
             </section>
 
 
@@ -43,7 +41,7 @@
                 <div class="row columns">
                     <ul class="menu align-center expanded text-center SMN_effect-2">
                         <li><a href="index">홈</a></li>
-                        <li><a href="#">침대</a></li>
+                        <li><a href="#">{{datas[2]}}</a></li>
                         <li><a href="#">책상</a></li>
                         <li><a href="#">서랍장</a></li>
                         <li><a href="#">테이블</a></li>
