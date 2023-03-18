@@ -164,7 +164,7 @@ def analyze():
     return redirect(url_for(f'yolo',data=urban_result))
 
 
-@app.route('/yolo/<data>', methods=['GET','POST'])
+@app.route('/<data>', methods=['GET','POST'])
 def yolo(data):
     # img_path = './room.jpg'
     img_path = 'room.jpg'
@@ -175,8 +175,8 @@ def yolo(data):
         labelList[i]=labelList[i][:labelList[i].find('0')-1]
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", labelList)
     
-    label = data[:data.find('0')]
-    print(label)
+    style = data[:data.find('0')]
+    print(style)
     
     prob = data[data.find('0')+2:]
     f_prob=prob[:2]
@@ -196,11 +196,16 @@ def yolo(data):
         if cnt==2:
             print("i",i)
             labelList.remove(j)
+    
+    itemList=[]
             
-    item=db.select(label,labelList)
+    for i in labelList:
+        item=db.select(style,i)
+        itemList.append(item)
+        
+    print(itemList)
 
-    print(item)
-    return render_template('imageapi.html', label=label, prob=prob, labelList=labelList, img_path=img_path)
+    return render_template('imageapi.html', style=style, prob=prob, labelList=labelList, img_path=img_path)
 
 # labelList 전처리
     
