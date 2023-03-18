@@ -196,9 +196,10 @@ def yolo(data):
         if cnt==2:
             print("i",i)
             labelList.remove(j)
-    
-    
+            
+    item=db.select(label,labelList)
 
+    print(item)
     return render_template('imageapi.html', label=label, prob=prob, labelList=labelList, img_path=img_path)
 
 # labelList 전처리
