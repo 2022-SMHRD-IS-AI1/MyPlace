@@ -176,7 +176,7 @@ def yolo(data):
         labelList[i]=labelList[i][:labelList[i].find('0')-1]
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ : ", labelList)
     
-    style = data[:data.find('0')]
+    style = data[:data.find('0')-1]
     print(style)
     
     prob = data[data.find('0')+2:]
@@ -193,10 +193,10 @@ def yolo(data):
             if i == j:
                 cnt+=1
                 print(j)
+        print('321423412351234124',i)
         if cnt==2:
             print("i",i)
             labelList.remove(i)
-    
     itemList=[]
     
     for i in labelList:

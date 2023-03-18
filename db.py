@@ -71,6 +71,7 @@ def select(style, label):
         
         conn = cx_Oracle.connect('kgt1234', '123456a', 'project-db-stu.ddns.net:1524/xe', encoding="UTF-8")
         cursor = conn.cursor()
+        print("SELECT * FROM FURNITURE WHERE FURNITURE_TYPE = '%s' AND FURNITURE_STYLE = '%s'" % (label, style))
         cursor.execute("SELECT * FROM FURNITURE WHERE FURNITURE_TYPE =(:1) AND FURNITURE_STYLE =(:2)", [label, style])
         data = cursor.fetchall()
         print("@#$#!%!@#$!@#$@!%!@%#$",data)
