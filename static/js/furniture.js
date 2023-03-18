@@ -17,14 +17,15 @@ $(function(){
         let resultHTML="";
 
         //템플릿문자열(백틱)
+
         //책상
-        if(event.target.textContent == ""){
+        if(event.target.textContent == "desk"){
             for(var i=0; i<5; i++){
                 resultHTML += `
-                <a href=${"#"} class="product">
+                <a href=${"https://www.naver.com/"} class="product">
                     <img src=${"https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg"} width="225">
                     <div class="product-name">
-                        ${s[i]}
+                        ${"책상"}
                     </div>
                     <div class="product-price">
                         ${49,000}          
@@ -35,14 +36,15 @@ $(function(){
     
             $('div.product-list').html(resultHTML);
         }
+
         // 의자
-        else if(event.target.textContent == ""){
+        else if(event.target.textContent == "chair"){
             for(var i=0; i<5; i++){
                 resultHTML += `
-                <a href=${"#"} class="product">
+                <a href=${"https://www.youtube.com/"} class="product">
                     <img src=${"https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg"} width="225">
                     <div class="product-name">
-                        ${s[i]}
+                        ${"의자"}
                     </div>
                     <div class="product-price">
                         ${49,000}          
@@ -53,14 +55,15 @@ $(function(){
     
             $('div.product-list').html(resultHTML);
         }
+
         // 테이블
-        else if(event.target.textContent == ""){
+        else if(event.target.textContent == "table"){
             for(var i=0; i<5; i++){
                 resultHTML += `
-                <a href=${"#"} class="product">
+                <a href=${"https://www.nexon.com/Home/Game"} class="product">
                     <img src=${"https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg"} width="225">
                     <div class="product-name">
-                        ${s[i]}
+                        ${"테이블"}
                     </div>
                     <div class="product-price">
                         ${49,000}          
@@ -71,14 +74,15 @@ $(function(){
     
             $('div.product-list').html(resultHTML);
         }
+
         // 침대
-        else if(event.target.textContent == ""){
+        else if(event.target.textContent == "bed"){
             for(var i=0; i<5; i++){
                 resultHTML += `
                 <a href=${"#"} class="product">
                     <img src=${"https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg"} width="225">
                     <div class="product-name">
-                        ${s[i]}
+                        ${"침대"}
                     </div>
                     <div class="product-price">
                         ${49,000}          
@@ -89,14 +93,15 @@ $(function(){
     
             $('div.product-list').html(resultHTML);
         }
+
         // 수납장
-        else if(event.target.textContent == ""){
+        else if(event.target.textContent == "closet"){
             for(var i=0; i<5; i++){
                 resultHTML += `
                 <a href=${"#"} class="product">
                     <img src=${"https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg"} width="225">
                     <div class="product-name">
-                        ${s[i]}
+                        ${"수납장"}
                     </div>
                     <div class="product-price">
                         ${49,000}          

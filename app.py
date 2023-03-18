@@ -200,7 +200,7 @@ def yolo(data):
     itemList=[]
     
     for i in labelList:
-        print('가구 :',i)
+        print('가구 :','1'+i+'1')
         item=db.select(style,i)
         itemList.append(item)
         
