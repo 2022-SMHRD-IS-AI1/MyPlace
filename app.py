@@ -14,7 +14,7 @@ from urllib.request import urlretrieve
 
 app = Flask(__name__, template_folder='templates')
 CORS(app)
-app.config['UPLOAD_FOLDER'] = 'C:/Users/777/Documents/GitHub/MyPlace/static' # 업로드 파일 경로 설정
+app.config['UPLOAD_FOLDER'] = 'C:/Users/user/Documents/GitHub/MyPlace/static' # 업로드 파일 경로 설정
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.secret_key = 'my_secret_key'
 
