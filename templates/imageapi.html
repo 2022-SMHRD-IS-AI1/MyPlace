@@ -37,22 +37,17 @@
             <section id="thumbnails">
                 <div><a id="main-img-src" href="" style="display:none;" /></div>
             </section>
-
-
-
             <div class="back color-2">
                 <div class="row columns">
                     <ul class="menu align-center expanded text-center SMN_effect-2">
-                        <li><a href="index">홈</a></li>
-                        <li><a href="#">{{labelList}}</a></li>
-                        <li><a href="#">책상</a></li>
-                        <li><a href="#">서랍장</a></li>
-                        <li><a href="#">테이블</a></li>
-                        <li><a href="#">의자</a></li>
+                      <li><a href="index">HOME</a></li>
+                        {% for item in labelList %}
+                          <li><a href="#">{{item}}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
-<br>
+            <br>
             <div class="hero-header"></div>
             <div class="products">
                 <div class="product-list">
