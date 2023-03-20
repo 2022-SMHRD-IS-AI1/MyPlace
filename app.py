@@ -1,11 +1,9 @@
-from flask import Flask, session, render_template, redirect, request, url_for, send_from_directory, abort, jsonify
+from flask import Flask, session, render_template, redirect, request, url_for
 from flask_cors import CORS
 import requests
 from datetime import datetime
-import uuid
 import db
 import os
-import time
 import infer
 import numpy as np
 from urllib.request import urlretrieve
@@ -75,8 +73,8 @@ def regist():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     error = None
-    #id = session['user_id']
-    return render_template('index.html', error=error)#, id=id
+    # id = session['user_id']
+    return render_template('index.html', error=error)#, id=id)
 
 
 # @app.route('/upload', methods=['GET','POST'])
@@ -198,25 +196,32 @@ def yolo(data):
             print("i",i)
             labelList.remove(i)
     itemList=[]
-    
+    size = 0
     for i in labelList:
-        print('가구 :',i)
+        size+=1
+        print(size)
         item=db.select(style,i)
         itemList.append(item)
         
     print(itemList)
+    
+    for i in range(0,size):
+        if itemList[size-(i+1)][0][1]=='desk':
+            session['desk'] = itemList[size-(i+1)][0]
+        elif itemList[size-(i+1)][0][1]=='bed':
+            session['bed'] = itemList[size-(i+1)][0]
+        elif itemList[size-(i+1)][0][1]=='closet':
+            session['closet'] = itemList[size-(i+1)][0]
+        elif itemList[size-(i+1)][0][1]=='table':
+            session['table'] = itemList[size-(i+1)][0]
+        else :
+            session['chair'] = itemList[size-(i+1)][0]
+    
+    print(session)
+    print('세션세션', session['bed'])
 
     return render_template('imageapi.html', style=style, prob=prob, labelList=labelList, img_path=img_path)
 
-# labelList 전처리
-    
-# 1. app.py 에서 함수 만들고
-# 2. best_ckpt.pt(저희꺼 모델) 불러오기
-# 3. 모델 실행
-# 4. infer.py 안에 있는 save dir 복붙
-# 5. render template
-# (imageapi.html, 값 다시 보내주기 
-# data = data(api돌린거), result(yolo돌린 결과값))
 
     
 @app.route('/properties', methods=['GET', 'POST'])
@@ -249,6 +254,11 @@ def kakao():
 
 @app.route('/imageapi')
 def imageapi():
+    desk = session['desk']
+    bed = session['bed']
+    closet = session['closet']
+    table = session['table']
+    chair = session['chair']
     return render_template('imageapi.html')
 
 @app.route('/Introduction')

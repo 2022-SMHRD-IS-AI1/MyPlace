@@ -63,7 +63,6 @@ def join(id,pw,email):
 #         conn.close()
 
 #     return data
-data = []
 def select(style, label):
     try:
         if not cx_Oracle.init_oracle_client:
