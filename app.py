@@ -14,7 +14,7 @@ from urllib.request import urlretrieve
 
 app = Flask(__name__, template_folder='templates')
 CORS(app)
-app.config['UPLOAD_FOLDER'] = 'C:/Users/user/Documents/GitHub/MyPlace/static' # 업로드 파일 경로 설정
+app.config['UPLOAD_FOLDER'] = 'C:/Users/user/OneDrive/Documents/GitHub/MyPlace/static' # 업로드 파일 경로 설정
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.secret_key = 'my_secret_key'
 
@@ -164,7 +164,7 @@ def analyze():
     return redirect(url_for(f'yolo',data=urban_result))
 
 
-@app.route('/<data>', methods=['GET','POST'])
+@app.route('/yolo<data>', methods=['GET','POST'])
 def yolo(data):
     # img_path = './room.jpg'
     img_path = 'room.jpg'
