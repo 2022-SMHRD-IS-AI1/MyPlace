@@ -106,7 +106,6 @@ def run(weights=osp.join(ROOT, 'best_ckpt.pt'),
     # Inference
     inferer = Inferer(source, webcam, webcam_addr, weights, device, yaml, img_size, half)
     labelList = inferer.infer(conf_thres, iou_thres, classes, agnostic_nms, max_det, save_dir, save_txt, not not_save_img, hide_labels, hide_conf, view_img)
-    print(labelList)
     return labelList
 
     if save_txt or not not_save_img:
