@@ -164,7 +164,6 @@ def analyze():
 
 @app.route('/yolo<data>', methods=['GET','POST'])
 def yolo(data):
-    # img_path = './room.jpg'
     img_path = 'room.jpg'
     labelList = infer.run(source=img_path)
     # print(labelList[0].find('0'))
@@ -207,6 +206,7 @@ def yolo(data):
     
     for i in range(0,size):
         if itemList[size-(i+1)][0][1]=='desk':
+            print(itemList[size-(i+1)][0])
             session['desk'] = itemList[size-(i+1)][0]
         elif itemList[size-(i+1)][0][1]=='bed':
             session['bed'] = itemList[size-(i+1)][0]
@@ -254,11 +254,6 @@ def kakao():
 
 @app.route('/imageapi')
 def imageapi():
-    desk = session['desk']
-    bed = session['bed']
-    closet = session['closet']
-    table = session['table']
-    chair = session['chair']
     return render_template('imageapi.html')
 
 @app.route('/Introduction')
