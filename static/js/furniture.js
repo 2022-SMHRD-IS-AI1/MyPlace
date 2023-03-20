@@ -45,7 +45,7 @@ $(function(){
                         ${"책상"}
                     </div>
                     <div class="product-price">
-                        ${desk_price[0].textContent}          
+                        ${desk_price[0].textContent+'원'}          
                     </div>
                 </a>
                 `;
@@ -53,7 +53,7 @@ $(function(){
     
             $('div.product-list').html(resultHTML);
         }
-
+ 
         // 의자
         else if(event.target.textContent == "chair"){
             for(var i=0; i<5; i++){
@@ -64,7 +64,7 @@ $(function(){
                         ${"의자"}
                     </div>
                     <div class="product-price">
-                        ${chair_price[0].textContent}          
+                        ${chair_price[0].textContent+'원'}          
                     </div>
                 </a>
                 `;
@@ -83,7 +83,7 @@ $(function(){
                         ${"테이블"}
                     </div>
                     <div class="product-price">
-                        ${table_price[0].textContent}          
+                        ${table_price[0].textContent+'원'}          
                     </div>
                 </a>
                 `;
@@ -102,7 +102,7 @@ $(function(){
                         ${"침대"}
                     </div>
                     <div class="product-price">
-                        ${bed_price[0].textContent}          
+                        ${bed_price[0].textContent+'원'}          
                     </div>
                 </a>
                 `;

@@ -5,8 +5,6 @@ const ServerURL = "http://18.182.31.43:8080/MyPlace_Image/";
 // http://35.78.206.254:8080/MyPlace_Image/FileUpload
 
 const myFileInput = $("#myFileInput")
-myFileInput.addEventListener("change", function() {
-alert(`업로드가 완료되었습니다. "결과보기"를 눌러주세요.`)});
 
 function request() {
   var inputFile = $("#myFileInput")[0].files[0];
