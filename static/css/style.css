@@ -10137,7 +10137,7 @@ textarea {
     -o-transition: .3s all ease;
     transition: .3s all ease; }
     #property-nav span:hover, #property-nav span.active {
-      background: #00204a;
+      background: #005555;
       color: #fff !important; }
   #property-nav .prev, #property-nav .next {
     position: absolute;

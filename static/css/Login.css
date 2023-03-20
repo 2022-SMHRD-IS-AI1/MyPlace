@@ -61,7 +61,7 @@ a{color:aliceblue;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
   color:#fff;
-  border-color:#1161ee;
+  border-color:#005555;
 }
 .login-form{
   min-height:345px;
@@ -129,7 +129,7 @@ a{color:aliceblue;text-decoration:none}
   color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-  background:#1161ee;
+  background:#005555;
 }
 .login-form .group .check:checked + label .icon:before{
   transform:scale(1) rotate(45deg);
