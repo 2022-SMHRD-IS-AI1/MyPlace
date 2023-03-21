@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts\flaticon\font\flaticon.css') }}" />
+    
     <noscript>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
     </noscript>
@@ -21,12 +23,11 @@
             <div class="col-lg-9 text-center">
                 <form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                     data-aos-delay="200">
-                    <p>
+                    <h2>
                       스타일 : {{style}}
-                    </p>
-                    <p>
+                      <br>
                       {{prob}} %
-                    </p>
+                    </h2>
                     <a href="move_furniture" title="Button push blue/green" class="button btnPush btnBlueGreen">3D 스타일링</a>
                 </form>
             </div>

@@ -244,25 +244,23 @@ def about():
 def contact():
     return render_template('contact.html')
 
-@app.route('/property-single')
+@app.route('/property-single', methods=['GET', 'POST'])
 def single():
     return render_template('property-single.html')
 
-@app.route('/Easter')
+@app.route('/Easter', methods=['GET', 'POST'])
 def kakao():
     return render_template('Easter.html')
 
-@app.route('/imageapi')
-def imageapi():
-    return render_template('imageapi.html')
-
-@app.route('/Introduction')
+@app.route('/Introduction', methods=['GET', 'POST'])
 def Introduction():
     return render_template('Introduction.html')
 
-@app.route('/move_furniture')
+@app.route('/move_furniture', methods=['GET', 'POST'])
 def move_furniture():
-    return render_template('move_furniture.html')
+    style = request.args.get('style')
+    print(style)
+    return render_template('move_furniture.html', style=style)
 
 
 
