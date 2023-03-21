@@ -57,9 +57,57 @@ $(document).ready(function() {
       "type" : "1"
     },
     {
-      "name" : "Moder_bed",
+      "name" : "Modern_bed",
       "image" : "static/models/thumbnails/thumbnail_Modern_bed.png",
       "model" : "static/models/js/Modern_bed.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Modern_table",
+      "image" : "static/models/thumbnails/thumbnail_Modern_table.png",
+      "model" : "static/models/js/Modern_table.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Modern_table2",
+      "image" : "static/models/thumbnails/thumbnail_Modern_table2.png",
+      "model" : "static/models/js/Modern_table2.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Nature_Nightstand",
+      "image" : "static/models/thumbnails/thumbnail_Nature_Nightstand.png",
+      "model" : "static/models/js/Nature_Nightstand.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Industrial_style_table",
+      "image" : "static/models/thumbnails/thumbnail_Industrial_style_table.png",
+      "model" : "static/models/js/Industrial_style_table.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Black_chair_ikea",
+      "image" : "static/models/thumbnails/thumbnail_Black_chair_ikea.png",
+      "model" : "static/models/js/Black_chair_ikea.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Wooden_closet",
+      "image" : "static/models/thumbnails/thumbnail_Wooden_closet.png",
+      "model" : "static/models/js/Wooden_closet.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Wooden_closet2",
+      "image" : "static/models/thumbnails/thumbnail_Wooden_closet2.png",
+      "model" : "static/models/js/Wooden_closet2.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Nature_bed",
+      "image" : "static/models/thumbnails/thumbnail_Nature_bed.png",
+      "model" : "static/models/js/Nature_bed.js",
       "type" : "1"
     },
    /*     
