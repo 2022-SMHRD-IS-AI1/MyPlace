@@ -5,8 +5,16 @@
 
     <link href="{{ url_for('static', filename='css/bootstrap2.css') }}"  rel="stylesheet">
     <link href="{{ url_for('static', filename='css/example.css') }}" rel="stylesheet">
-
-	
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        $( 'button.a' ).click( function() {
+          $( 'h2.new' ).fadeOut();
+        } );
+      } );
+    </script>
   </head>
 
   <body>
@@ -139,9 +147,9 @@
           <div id="viewer">
 
             <div id="main-controls">
-              <a href="#" class="btn btn-default btn-sm" id="new">
+              <button href="#" class="a" id="new">
                 <!--New Plan-->새 공간
-              </a>
+              </button>
               <a href="#" class="btn btn-default btn-sm" id="saveFile">
                 <!--Save Plan-->저장
               </a>
@@ -149,6 +157,7 @@
                <input type="file" class="hidden-input" id="loadFile">
                <!--Load Plan-->열기
               </a>
+              <h2 class = "new"><img src ="static\images\click.png"/>새 공간을 클릭해서 나만의 공간을 꾸며보세요! </h2>
             </div>
 
             <div id="camera-controls">
