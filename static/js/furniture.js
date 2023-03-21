@@ -23,6 +23,9 @@ $(function(){
     let modern_bed_photo_list = ["static/images/modern_bed2.jpg", "static/images/modern_bed3.jpg", "static/images/modern_bed4.jpg"]
     let modern_desk_photo_list = ["static/images/modern_desk2.jpg", "static/images/modern_desk3.jpg", "static/images/modern_desk4.jpg"]
     let modern_closet_photo_list = ["static/images/modern_closet2.jpg", "static/images/modern_closet3.jpg", "static/images/modern_closet4.jpg"]
+    let modern_bed_price_list = ["510,000", "436,500", "647,780"]
+    let modern_desk_price_list = ["192,700", "188,430", "679,000"]
+    let modern_closet_price_list = ["178,000", "339,900", "109,000"]
 
     $menu.on('click', function(event){
        
@@ -65,7 +68,7 @@ $(function(){
                         ${modern_desk_name_list[i]}
                     </div>
                     <div class="product-price">
-                        ${149000+'원'}          
+                        ${modern_desk_price_list[i]+'원'}          
                         <br>
                         <br>
                     </div>
@@ -99,7 +102,7 @@ $(function(){
                         ${"의자"}
                     </div>
                     <div class="product-price">
-                        ${49000+'원'}          
+                        ${"49,000"+'원'}          
                         <br>
                         <br>
                     </div>
@@ -119,7 +122,7 @@ $(function(){
                         ${"테이블"}
                     </div>
                     <div class="product-price">
-                        ${49000+'원'}
+                        ${"49,000"+'원'}
                         <br>
                         <br>       
                     </div>
@@ -167,7 +170,7 @@ $(function(){
                         ${modern_bed_name_list[i]}
                     </div>
                     <div class="product-price">
-                        ${549000+'원'}
+                        ${modern_bed_price_list[i]+'원'}
                         <br>
                         <br>  
                     </div>
@@ -201,7 +204,7 @@ $(function(){
                         ${modern_closet_name_list[i]}
                     </div>
                     <div class="product-price">
-                        ${49000}원
+                        ${modern_closet_price_list[i]}원
                         <br>
                         <br>
                     </div>
