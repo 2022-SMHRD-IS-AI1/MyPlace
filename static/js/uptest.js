@@ -6,13 +6,13 @@ const ServerURL = "http://18.182.31.43:8080/MyPlace_Image/";
 
 const myFileInput = $("#myFileInput")
 
-// function fileInput() { 
-//   var inputFile = $("#myFileInput")[0].files[0];
-//   var inputFileButton = $("#inputFileButton");
-//   if (inputFile){
-//     inputFileButton.backgroundcolor = 
-//   }
-// }
+function fileInput() { 
+  var inputFile = $("#myFileInput")[0].files[0];
+  var inputFileButton = $("#inputFileButton");
+  if (inputFile==true){
+    alert('업로드 완료. "결과보기"를 눌러주세요.');
+  }
+}
 
 function request() {
   var inputFile = $("#myFileInput")[0].files[0];

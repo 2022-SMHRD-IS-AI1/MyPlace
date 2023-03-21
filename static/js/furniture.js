@@ -153,7 +153,7 @@ $(function(){
                 <a href=${bed_url[0].textContent} class="product">
                     <img src="${bed_path[0].textContent}" width="225">
                     <div class="product-name">
-                        ${"레스트 좌식 접이식 소파베드"}
+                        ${"호텔식 모나코 편백아트월 LED조명 평상형 침대"}
                     </div>
                     <div class="product-price">
                         ${bed_price[0].textContent+'원'}    
