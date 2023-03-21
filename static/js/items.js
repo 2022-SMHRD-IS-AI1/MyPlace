@@ -57,9 +57,15 @@ $(document).ready(function() {
       "type" : "1"
     },
     {
-      "name" : "Moder_bed",
+      "name" : "Modern_bed",
       "image" : "static/models/thumbnails/thumbnail_Modern_bed.png",
       "model" : "static/models/js/Modern_bed.js",
+      "type" : "1"
+    },
+    {
+      "name" : "Modern_bed2",
+      // "image" : "static/models/thumbnails/thumbnail_Modern_bed.png",
+      "model" : "static/models/js/Modern_bed2.js",
       "type" : "1"
     },
    /*     
